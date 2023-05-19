@@ -1,16 +1,20 @@
 <template>
-  <div class="container">
-  <navbarComponentsVue></navbarComponentsVue>
-     
+  <div class="container" >
+  <navbar-components></navbar-components>
+  <div class="row d-flex justify-content-center container-lg container-sm">
+  <div style="height: 80vh;" class="d-flex align-items-center justify-content-center">
+    <hello-grid></hello-grid>
   </div>
+</div>
+</div>
 </template>
 
 <script>
-import navbarComponentsVue from './navbar-components.vue';
-
+import HelloGrid from './HelloGrid.vue'
+import NavbarComponents from './navbar-components.vue';
 export default {
   name: "HelloWorld",
-  components: {navbarComponentsVue}
+  components: { HelloGrid, NavbarComponents }
 
   
   
@@ -20,13 +24,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-.container {
-  background-color: white;
-  width: 90%;
-  height: 100vh;
-  margin-top: 1vh;
-  border-radius: 20px 20px 0px 0px;
-}
+@import '../styles.scss';
+
 
 
 </style>
