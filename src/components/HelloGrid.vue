@@ -7,7 +7,6 @@
       <div class="col-md-8">
         <div>
           <AboutMeFirst v-show="showAboutMeFirst"  @data="GetData"/>
-          
           <AboutMeSecondVue v-show="showAboutMeSecond" :name="personInfo "></AboutMeSecondVue>
         </div>
       </div>
@@ -16,47 +15,33 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+
 import AboutMeFirst from './AboutMeFirst.vue'
 import AboutMeSecondVue from './AboutMeSecond.vue'
 
 export default {
   components: { AboutMeFirst, AboutMeSecondVue },
   
-  setup() { 
-    const personInfo = ref('')
-    const change = ''
-    function GetData(data) {
-       
-      
-      
-      personInfo.value = data
-
-
-      if(personInfo.value != "" ){
-        showAboutMeSecond.value = true
-        showAboutMeFirst.value = false
-       
-      }
-      
-    }
-    
-    const showAboutMeFirst = ref(true)
-    const showAboutMeSecond = ref(false)
-
-   
-
-
+  data() {
     return {
-      personInfo,
-      GetData,
-      showAboutMeFirst,
-      showAboutMeSecond,
-      change
-      
+      personInfo: '',
+      showAboutMeFirst: true,
+      showAboutMeSecond: false,
+      change: ''
+    };
+  },
+  methods: {
+    GetData(data) {
+      this.personInfo = data;
+
+      if (this.personInfo !== '') {
+        this.showAboutMeSecond = true;
+        this.showAboutMeFirst = false;
+      }
     }
   }
-}
+  }
+
 </script>
 
 <style lang="scss" scoped>

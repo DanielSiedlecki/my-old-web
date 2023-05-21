@@ -1,53 +1,71 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light shadow-0">
-  <div class="container-fluid mt-4 ">
-    <a class="navbar-brand" href="#">
-      <img
-        src="../assets/Logo_NavBarv2.svg"
-        height="50"
-        alt="MDB Logo"
-        loading="lazy"
-      />
+  <MDBNavbar light bg="light" expand="lg" container>
+    <MDBNavbarBrand href="#" ><img  style="width: 50%; height: 50%;" src="../assets/Logo_NavBarv2.svg" alt=""></MDBNavbarBrand>
+    <MDBNavbarToggler
+      target="#navbarNav"
+      @click="collapse2 = !collapse2"
+    ></MDBNavbarToggler>
+    <MDBCollapse  id="navbarNav" v-model="collapse2">
+  <MDBNavbarNav style="list-style: none; width: 100%; margin-right: 2rem; " class="d-lg-flex  justify-content-lg-end custom-font-size">
+    <MDBNavbarItem to="#" active class="mx-3 mt-2 custom-border-md-top hover"  > Example </MDBNavbarItem>
+    <MDBNavbarItem to="#" class="mx-3 mt-2 custom-border-md-top hover">         Example </MDBNavbarItem>
+    <MDBNavbarItem to="#" class="mx-3 mt-2 custom-border-md-top hover">         Example</MDBNavbarItem>
+    <MDBNavbarItem to="#" disabled class="mx-3 mt-2 custom-border-md-top hover">Example </MDBNavbarItem>
+    <MDBNavbarItem to="#" disabled class="mx-3 mt-2 custom-border-md-top hover ">Example </MDBNavbarItem>
     
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-      <div class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5" >
-        <a class="nav-link me-2 active" aria-current="page" href="#">Example 1</a>
-        <a class="nav-link me-2" href="#">Example 2</a>
-        <a class="nav-link me-2" href="#">Example 3</a>
-        <a class="nav-link me-2" href="#">Example 4</a>
-        <a class="nav-link me-2" href="#">Example 5</a>
-        
-        
-      </div>
-    </div>
-  </div>
-</nav>
+  </MDBNavbarNav>
+</MDBCollapse>
+  </MDBNavbar>
 </template>
 
 <script>
-export default {
-
+  import {
+    MDBNavbar,
+    MDBNavbarToggler,
+    MDBNavbarBrand,
     
-    setup () {
-        
+    MDBNavbarItem,
+    MDBCollapse,
+  } from 'mdb-vue-ui-kit';
+  import { ref } from 'vue';
 
-        return {}
-    }
-}
+  export default {
+    components: {
+      MDBNavbar,
+      MDBNavbarToggler,
+      MDBNavbarBrand,
+      MDBNavbarItem,
+      MDBCollapse,
+    },
+    setup() {
+      const collapse2 = ref(false);
+      return { collapse2 };
+    },
+  };
 </script>
-
 <style lang="scss" scoped>
+@import "../styles.scss";
+.custom-font-size {
+    font-size: 28px
+  }
+
+ .hover:hover {
+    color: $blue-global-color;
+    cursor: pointer;
   
+  }
+@media (max-width: 918px) {
+
+  
+  .custom-border-md-top {
+    
+
+    text-align: center;
+  }
+
+  .custom-font-size {
+    font-size: 24px
+  }
+}
+
 </style>

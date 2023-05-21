@@ -6,4 +6,6 @@ import './styles.scss'
 
 createApp(App).mount('#app')
 
-import "bootstrap/dist/js/bootstrap.js"
+import "bootstrap/dist/js/bootstrap.js";
+import "mdb-vue-ui-kit/js/mdb.es.min.js";
+

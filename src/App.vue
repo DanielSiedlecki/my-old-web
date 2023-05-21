@@ -1,6 +1,6 @@
 <template>
   
-  <div class="d-flex flex-column vh-100" style="background-color: white; border-radius: 20px;">
+  <div class="d-flex flex-column " style="background-color: white; border-radius: 20px;">
     
     <navbarComponents></navbarComponents>
     <div class="container bg-white rounded p-3 flex-grow-1 d-flex flex-column justify-content-center align-items-center ">

@@ -8,7 +8,7 @@
           </span>
         </div>
         <div class="col-md-12 mt-2">
-          <input type="input" v-model="inputName" class="form-control btn-lg" :class="{'validation': !validation}" :placeholder="validation ? 'Your name' : 'Uzupełnij dane poprawnie'" name="name" id="name" required />
+          <input type="input" v-model="inputName" @keydown.space.prevent class="form-control btn-lg" :class="{'validation': !validation}" :placeholder="validation ? 'Your name' : 'Uzupełnij dane poprawnie'" name="name" id="name" required />
         </div>
         <div class="col-md-12 mt-4">
           <div class="row">
@@ -30,38 +30,62 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+
+import { computed, ref } from 'vue';
 
 import DefaultButtonVue from './DefaultButton.vue';
 
 export default {
   components: { DefaultButtonVue },
   setup(_, { emit }) {
-    const name = ''
     const inputName = '' 
     const validation = ref(true)
 
     function submitName(name) {
+    const namechange = computed(()=> name.charAt(0).toUpperCase() + name.slice(1).toLowerCase())
     
-      emit('data', name);
+    
+    emit('data', namechange.value);
+
+
     }
     
+  
+
     function validationName(){
-        if(this.inputName != "" && this.inputName.length >= 3 && this.inputName.length <= 12 ) {
-            console.log("dane porpawne")
-            submitName(this.inputName)
-        } 
-        else {
-            console.log("uzupelnij dane porpawnie")
-            this.validation = false
+
+        const name = this.inputName
+        
+        if(name != "" && name.length >= 3 && name.length <= 12 ) {
+
+          
+
+            const signs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]; 
+            let foundLetter = false
+
+            signs.forEach(sign => {
+              if (name.indexOf(sign) !== -1) {
+                return foundLetter = true
+              }
+            })
+
             
-        }
+            if(!foundLetter){
+              submitName(name)
+            }
+            else{
+              this.validation = false
+            }
+            
+           }
+           else[ this.validation = false]
+           
     }
 
     
 
 
-    return { submitName, name, inputName, validationName, validation};
+    return { submitName, inputName, validationName, validation};
   }
 };
 </script>
