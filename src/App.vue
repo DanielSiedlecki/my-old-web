@@ -1,17 +1,23 @@
 <template>
-  <div class="container1"> 
-  <HelloWorld/>
-</div>
+  
+  <div class="d-flex flex-column vh-100" style="background-color: white; border-radius: 20px;">
+    
+    <navbarComponents></navbarComponents>
+    <div class="container bg-white rounded p-3 flex-grow-1 d-flex flex-column justify-content-center align-items-center ">
+
+    <hello-world class="d-flex justify-content-center align-items-center"></hello-world>
+  </div>
+  </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import navbarComponents from './components/navbar-components.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld, navbarComponents
   }
 }
 </script>
@@ -23,10 +29,5 @@ export default {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-.container1 {
-  background-color: white;
-  width: 80%;
-  height: 99vh;
-  
-}
+
 </style>

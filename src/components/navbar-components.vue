@@ -1,9 +1,9 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light shadow-0 ">
-  <div class="container-fluid mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-0">
+  <div class="container-fluid mt-4 ">
     <a class="navbar-brand" href="#">
       <img
-        src="../assets/Logo_navBar.svg"
+        src="../assets/Logo_NavBarv2.svg"
         height="50"
         alt="MDB Logo"
         loading="lazy"
@@ -49,11 +49,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .navbar-nav-custom {
-
-    width: 100%;
-    
-    
-  }
-
+  
 </style>
