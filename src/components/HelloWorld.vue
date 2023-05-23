@@ -1,19 +1,10 @@
 <template>
-  <div class="container-fluid full-height border">
-    <div class="row full-height">
-      <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-        <hello-grid></hello-grid>
-      </div>
-    </div>
-  </div>
+<hello-grid @buttonClick="handleButtonClick"  class="custom-container d-flex align-items-center justify-content-center " @scrollToEducation="scrollToEducation"/>
+<div ref="educationSection">
+<education-section   class="custom-container position-relative" style=""/>
 
-  <div class="container-fluid full-height border mt-2">
-    <div class="row full-height">
-      <div class="col-12 d-flex flex-column">
-        <education-section></education-section>
-      </div>
-    </div>
-  </div>
+</div>
+
 </template>
 
 <script>
@@ -22,9 +13,18 @@ import EducationSection from './EducationSection.vue';
 import HelloGrid from './HelloGrid.vue'
 
 
+
 export default {
   name: "HelloWorld",
-  components: { HelloGrid, EducationSection,}
+  components: { HelloGrid, EducationSection},
+
+  methods: {
+    handleButtonClick() {
+    console.log('Funkcja w komponencie HelloWorld została wywołana');
+    console.log(this.$refs['educationSection'])
+    this.$refs['educationSection'].scrollIntoView({behavior: "smooth"})
+  }
+  },
 
   
   
@@ -36,13 +36,11 @@ export default {
 
 @import '../styles.scss';
 
-.full-height {
-    height: 100vh;
-  }
 
-  @media (max-width: 767px) {
-    .full-height {
-      height: 100%;
-    }
+
+
+.custom-container {
+    min-height: 100vh;
+    
   }
 </style>

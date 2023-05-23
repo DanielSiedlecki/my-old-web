@@ -1,12 +1,12 @@
 <template>
  <div style="display: flex; align-items: flex-start; justify-content: center;">
   <div style="position: relative;">
-    <div class="line" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); height: 400px; width: 10px; background-color: black;"></div>
+    <div class="line"></div>
     
     <div  class="" style="display: flex; flex-direction: row;">
-    <div class="tekst2  " style="margin-top: 50%; text-align: center;">10.2020 <br> -<br> ongoing</div>
-    <i class="fas fa-circle " style="font-size: 102px; position: relative; margin-top: 100px; color:black "></i>
-    <div class="tekst1 " style="margin-top: 55%;" >TEKST 1</div>
+    <div class="tekst2 d-lg-flex align-items-lg-center  " style=" text-align: center;"><slot name="data_start"></slot> <br> -<br> <slot name="data_end"></slot></div>
+    <i class="fas fa-circle icon " style="bottom: 5vh ; position: relative; margin-top: 100px; color:black "></i>
+    
    
   </div>
 </div>
@@ -19,6 +19,43 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+.icon {
+  font-size: 102px;
+};
+.line {
+  height: 50vh;
+  position: absolute; top:50%; left: 70%; transform: translateX(-50%);  width: 1vw; background-color: black;
+}
+@media screen and (max-height: 550px){
+.line {
+  top: 40%;
+  
+}
+}
+@media screen and (max-height: 760px){
+.line {
+  height: 35vh;
+}
+}
+@media screen and (max-height: 960px){
+.line {
+  height: 35vh;
+}
+}
+@media screen and (max-width: 992px) {
+.tekst1 { display: none;}
+.tekst2 { display: none;}
+
+.line {
+  position: absolute;left: 50%; transform: translateX(-50%) 
+  
+}
+.icon {
+  font-size: 7vw
+}
+
+}
 
 </style>

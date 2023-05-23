@@ -17,7 +17,7 @@
 
 </div>
 <div class="col-md-12 d-flex justify-content-end">
-  <button-read-more-vue></button-read-more-vue>
+  <button-read-more-vue @click="emitButtonClick" ></button-read-more-vue>
   
 
 
@@ -44,8 +44,17 @@ export default {
         name:{
         type: String,
         default: 'name'
-        }
+        },
+
     },
+     methods: {
+    emitButtonClick() {
+      this.$emit('buttonClick')
+      console.log("zaczynam emitowanie");}
+    }
+    
+    
+    
 
   
     

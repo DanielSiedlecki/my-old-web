@@ -7,7 +7,7 @@
       <div class="col-md-8">
         <div>
           <AboutMeFirst v-show="showAboutMeFirst"  @data="GetData"/>
-          <AboutMeSecondVue v-show="showAboutMeSecond" :name="personInfo "></AboutMeSecondVue>
+          <AboutMeSecondVue v-show="showAboutMeSecond" @buttonClick="handleButtonClick" :name="personInfo "></AboutMeSecondVue>
         </div>
       </div>
     </div>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
 
 import AboutMeFirst from './AboutMeFirst.vue'
 import AboutMeSecondVue from './AboutMeSecond.vue'
@@ -33,13 +34,20 @@ export default {
   methods: {
     GetData(data) {
       this.personInfo = data;
-
+      console.log("work")
       if (this.personInfo !== '') {
         this.showAboutMeSecond = true;
+        console.log("work2")
         this.showAboutMeFirst = false;
+        console.log(this.AboutMeFirst)
       }
+    },
+    handleButtonClick() {
+      console.log('Funkcja w komponencie 2 została wywołana');
+      this.$emit('buttonClick');
     }
   }
+  
   }
 
 </script>
