@@ -3,7 +3,7 @@
 
 
   <template>
-    <div class="mt-5 mb-5 "><h1 class="header_name" style="text-align: center;"><slot name="HeaderName"> </slot></h1></div>
+    <div class="mt-5 mb-5 "><h1 class="header_name" style="text-align: center;"><slot> </slot></h1></div>
   </template>
   
   <script>

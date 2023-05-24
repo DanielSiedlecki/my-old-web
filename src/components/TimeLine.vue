@@ -1,22 +1,61 @@
 <template>
-  <div style="width: 30%;" class="col-md-4 col-sm-3 circle ">
-            
-            <CircleLine>
-    
-               <template #data_start><slot name="data_start"></slot></template>
-               <template #data_end><slot name="data_end"></slot></template>
-    
-            </CircleLine>
-              
-            </div>
-</template>
+   <div class="TimeLine">
+     <p>
+      <slot  name="data_start"></slot>
+       <br/>
+       <slot name="data_divider"> </slot>
+        <br/>
+      <slot name="data_end"></slot>
+     </p>
+     <div class="object">
+       <div class="circle"></div>
+       <div class="line"></div>
+     </div>
+   </div>
+ </template>
+ <script>
+ export default {};
 
-<script>
-export default {
 
+
+ </script>
+ 
+ <style lang="scss" scoped>
+ .object {
+   
+   transform: scale(0.75);
+ }
+ 
+ .circle {
+   background-color: black;
+   width: 10vw;
+   height: 10vw;
+   border-radius: 50%;
+ }
+ 
+ .line {
+   width: 1vw;
+   height: 56vh;
+   left: 42.5%;
+   top: -10%;
+ 
+   transform: translateX(50%);
+   background-color: black;
+   position: absolute;
+ }
+ .TimeLine {
+   display: flex;
+   
+ }
+ p {
+   
+   display:flex;
+   align-items: center;
+   text-align: center;
+   
+   font-size: 0.8vw;
+   font-weight: 600;
 }
-</script>
 
-<style scoped lang="scss">
 
-</style>
+ </style>
