@@ -1,56 +1,57 @@
 <template>
-  <div class="container" style="margin-top: 10vh">
-    <PageHeader> Education & Course</PageHeader>
-    <div class="row" >
-      <div class="col-4 col-sm-2 mt-5 " style=""> 
+  <MDBContainer>
+    <PageHeader> Work Experience</PageHeader>
+    <MDBRow class="row">
+      <MDBCol class="col-4 col-sm-2 mt-5"> 
         
         
-        <TimeLine circleColor="black" >
-          <template v-if="VisibilityDate" #data_start>10.2020</template>
+        <TimeLine >
+          <template v-if="VisibilityDate" #data_start>02.2023</template>
           <template v-if="VisibilityDate" #data_divider>-</template>
           <template v-if="VisibilityDate" #data_end>Ongoing</template>
 
 
         </TimeLine>  
       
-      </div>
+      </MDBCol>
 
-      <div class="col-8 col-sm-10 mb-5 mb-sm-3 "> 
+      <MDBCol class="col-8 col-sm-10 mb-5  "> 
       <div class="row">
-              <div class="col-md-12 d-flex justify-content-center ms-lg-3 " >
-                  <text-container style="max-width: 100vw">
+              <div class="col-md-12 d-flex justify-content-center ms-lg-3">
+                  <text-container style="max-width: 100vw;">
                   
-                  <template #mainheader>WSB Meritum University</template>
-                  <template v-if="!VisibilityDate" #date  >10.2020 - Ongoing</template>
-                  <template #subtitle>Computer Network Enginnering</template>
+                  <template #mainheader>ZETO ŚWIDNICA SP Z.O.O.</template>
+                  <template v-if="!VisibilityDate" #date  >03.2020 - Ongoing</template>
+                  <template #subtitle>Intern Frontend Developer</template>
                   
-                  <template #data_start>10.2020</template>          
-                  <template #data_end>Ongoing</template>                     
+                                     
 
                   <template #description>
-                    I am a 3th student of Computer Science in the full-time mode. My passion is programming,
-                     but I also enjoy learning new things.
-                     That's why I chose to specialize in Computer Network Engineering.
+                    Responsibilites: Participation in a web application project at Portiernia. My
+                    main tasks were designing the entire Front End for this web application using
+                    the Angular framework and DevExpress.
 
                   </template>
                   </text-container>
                 </div>
                 </div>
-              </div> 
-      </div>
+                </MDBCol> 
+      </MDBRow>
 
       
 
       
-    </div >
+    </MDBContainer >
       <div class="container mt-5 mb-5">
         <div class="row d-flex">
         <div class="col-md-12 mt-5">
         <list-experience>
 
-          <template #Header_title> Course and Training</template>
-          <template #first_slot>Altkom Academy Training in GIT - Agile and Modern Code Repository </template>
-          <template #second_slot>Driver's license B</template>
+          <template #Header_title> Currently Working</template>
+          <template #first_slot>Engineering thesis titled "Online Registration System for a Small Business
+            using Node.js and Angular"
+          </template>
+          <template #second_slot>Static website for a physiotherapist and personal trainer using Vue.js</template>
           
         </list-experience>
       </div>
@@ -64,7 +65,7 @@
 <script>
 
 import TextContainer from './Text-Container.vue';
-
+ import { MDBContainer, MDBRow, MDBCol} from 'mdb-vue-ui-kit'; 
 import TimeLine from './TimeLine.vue'
 import PageHeader from './PageHeader.vue';
 import ListExperience from './ListExperience.vue';
@@ -74,7 +75,7 @@ import ListExperience from './ListExperience.vue';
 
 export default {
   
-  components: { TextContainer, TimeLine,PageHeader, ListExperience },
+  components: { TextContainer, MDBContainer, MDBRow, TimeLine, MDBCol,PageHeader, ListExperience },
   mounted() {
     this.checkActuallyVisibility()
     window.addEventListener('resize', this.onResize)
@@ -82,7 +83,7 @@ export default {
   data() {
     
     return {
-    VisibilityDate: true,
+    VisibilityDate: false,
     windowWidth: window.innerWidth,
     actuallyWidth: window.innerWidth
 
@@ -102,13 +103,11 @@ export default {
     checkActuallyVisibility(){
       console.log(this.actuallyWidth)
       if(this.actuallyWidth >= 920) {
-        console.log(this.VisibilityDate)
+        
         this.VisibilityDate = true
       }
       else {
-        
         this.VisibilityDate = false
-        console.log(this.VisibilityDate + "else")
       }
 
 

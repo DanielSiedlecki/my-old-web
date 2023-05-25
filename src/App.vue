@@ -5,18 +5,23 @@
     <navbarComponents></navbarComponents>
    
     <hello-world></hello-world>
+
+
   
   </div>
+
+  <arrow-scrool-up class="arrow-up"></arrow-scrool-up>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import navbarComponents from './components/navbar-components.vue';
+import ArrowScroolUp from './components/Elements/ArrowScroolUp.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld, navbarComponents
+    HelloWorld, navbarComponents, ArrowScroolUp,
   }
 }
 </script>
@@ -27,6 +32,9 @@ export default {
 #app {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
+
+
+
 
 
 </style>

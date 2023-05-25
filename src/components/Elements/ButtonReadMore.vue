@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles.scss';
+@import '../../styles.scss';
 button {
     border: 3px solid #327CE5;
     filter: drop-shadow(0px 4px 3px #000000);

@@ -8,19 +8,31 @@
       <slot name="data_end"></slot>
      </p>
      <div class="object">
-       <div class="circle"></div>
+       <div class="circle" :style="`background-color: ${circleColor}`"></div>
        <div class="line"></div>
      </div>
    </div>
  </template>
  <script>
- export default {};
+ export default {
+  props: {
+    circleColor: {
+      type: String,
+      default: 'black'
+    }
+
+  }
+
+
+ };
 
 
 
  </script>
  
  <style lang="scss" scoped>
+@import '../styles.scss';
+
  .object {
    
    transform: scale(0.75);
@@ -36,7 +48,7 @@
  .line {
    width: 1vw;
    height: 56vh;
-   left: 42.5%;
+   left: 40%;
    top: -10%;
  
    transform: translateX(50%);

@@ -4,7 +4,7 @@
     
     <div class="row">
 
-        <div class="col-md-12 d-flex justify-content-center">
+        <div class="col-md-12 d-flex justify-content-start">
 
             <h1 class="display-4" style="font-family: Roboto, sans-serif; font-weight: 600;">Hello {{ name }}, Nice to meet you too!  </h1>
 
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import ButtonReadMoreVue from './ButtonReadMore.vue'
+import ButtonReadMoreVue from './Elements/ButtonReadMore.vue'
 
 export default {
     components: {

@@ -1,11 +1,14 @@
 <template>
-<page-header >Course and Training</page-header>
-<ul>
-    <li ><i class="fas fa-check"></i><slot name="first_slot"></slot></li>
-    <li ><i class="fas fa-check"></i><slot name="second_slot"></slot></li>
-    <li ><i class="fas fa-check"></i><slot name="third_slot"></slot></li>
-    <li ><i class="fas fa-check"></i><slot name="fourth_slot"></slot></li>
-    
+<page-header ><slot name="Header_title"></slot></page-header>
+<ul class="mt-5">
+   
+   <li class="mt-1" v-for="item in lista" :key="item">
+    <i style="margin-right: 0.5vw;" class="fas fa-check"></i>
+    <slot  :name="item"></slot>
+  
+  
+  
+  </li> 
 
 
 
@@ -22,6 +25,22 @@ import PageHeader from './PageHeader.vue'
 
 export default {
   components: { PageHeader },
+
+  data(){
+    return{
+    showSlot: false,
+    lista: []
+    }
+  },
+
+
+
+  mounted(){
+
+    this.lista = ['first_slot', 'second_slot', 'third_slot', 'fourth_slot'].filter(slot => !!this.$slots[slot])
+  }
+
+
 
 
 

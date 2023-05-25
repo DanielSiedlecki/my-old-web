@@ -24,7 +24,7 @@
 
 <script>
 import { ref } from 'vue';
-import DefaultButtonVue from './DefaultButton.vue';
+import DefaultButtonVue from './Elements/DefaultButton.vue';
 
 export default {
   components: { DefaultButtonVue },

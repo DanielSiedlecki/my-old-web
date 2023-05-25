@@ -1,5 +1,5 @@
 <template>
-  <MDBNavbar light bg="light" expand="lg" container>
+  <MDBNavbar class="sticky-top" light bg="white" expand="lg" container>
     <MDBNavbarBrand href="#" ><img  style="width: 50%; height: 50%;" src="../assets/Logo_NavBarv2.svg" alt=""></MDBNavbarBrand>
     <MDBNavbarToggler
       target="#navbarNav"

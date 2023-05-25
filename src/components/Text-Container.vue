@@ -13,7 +13,7 @@
       
 
         <div class="">
-        <h4 class="date flex-grow-1 "> <slot name="date"></slot></h4>
+        <h4 class="date flex-grow-1 " style="font-size: 2.5vw"> <slot name="date"></slot></h4>
         </div>
 
         <div class="" >
