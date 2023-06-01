@@ -5,7 +5,7 @@
     <navbarComponents></navbarComponents>
    
     <hello-world></hello-world>
-
+    
 
   
   </div>
@@ -18,10 +18,14 @@ import HelloWorld from './components/HelloWorld.vue'
 import navbarComponents from './components/navbar-components.vue';
 import ArrowScroolUp from './components/Elements/ArrowScroolUp.vue';
 
+
 export default {
   name: 'App',
   components: {
-    HelloWorld, navbarComponents, ArrowScroolUp,
+    HelloWorld,
+    
+    navbarComponents, ArrowScroolUp,
+    
   }
 }
 </script>

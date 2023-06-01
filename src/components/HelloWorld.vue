@@ -4,7 +4,11 @@
 <education-section  v-if="VisiblitySection" class="custom-container position-relative" style=""/>
 
 </div>
-<work-section v-if="VisiblitySection"  class="custom-container position-relative"> </work-section>
+<work-section v-if="VisiblitySection" @buttonClick2="handleButtonClick2"  class="custom-container position-relative"> </work-section>
+
+
+<skills-section style="min-height: 90vh;" v-if="VisibilitySkillsSection"> </skills-section>
+
 
 </template>
 
@@ -12,13 +16,18 @@
 import EducationSection from './EducationSection.vue';
 import workSection from './WorkSection.vue'
 import HelloGrid from './HelloGrid.vue'
+import SkillsSection from './SkillsSection.vue';
 
 
 
 export default {
   name: "HelloWorld",
-  components: { HelloGrid, EducationSection, workSection},
-  data(){return {VisiblitySection: false}},
+  components: { HelloGrid,
+    
+    EducationSection, workSection,
+    SkillsSection
+  },
+  data(){return {VisiblitySection: false, VisibilitySkillsSection: false}},
   methods: {
     handleButtonClick() {
 
@@ -30,8 +39,15 @@ export default {
       this.$refs['educationSection'].scrollIntoView({ behavior: "smooth" });
     }, 100);
   
-  }
   },
+  handleButtonClick2() {
+      this.VisibilitySkillsSection = true
+      this.VisiblitySection = false
+    }
+  
+  },
+
+  
 
   
   

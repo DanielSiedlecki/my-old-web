@@ -57,6 +57,8 @@
       </div>
     </div> 
 
+    <button-read-more @click="ButtonClick2()" style="float: right;" text="Show Skills"> </button-read-more>
+
 
       </div>
 
@@ -69,13 +71,14 @@ import TextContainer from './Text-Container.vue';
 import TimeLine from './TimeLine.vue'
 import PageHeader from './PageHeader.vue';
 import ListExperience from './ListExperience.vue';
+import ButtonReadMore from './Elements/ButtonReadMore.vue';
 
 
 
 
 export default {
   
-  components: { TextContainer, MDBContainer, MDBRow, TimeLine, MDBCol,PageHeader, ListExperience },
+  components: { TextContainer, MDBContainer, MDBRow, TimeLine, MDBCol,PageHeader, ListExperience, ButtonReadMore },
   mounted() {
     this.checkActuallyVisibility()
     window.addEventListener('resize', this.onResize)
@@ -89,6 +92,12 @@ export default {
 
   }},
   methods: {  
+
+    ButtonClick2() {
+    console.log("Klik");
+    this.$emit('buttonClick2');
+  }
+    ,
     onResize() {
       this.windowWidth = window.innerWidth
       if(this.windowWidth >= 920){
