@@ -1,13 +1,14 @@
 <template>
-<hello-grid @buttonClick="handleButtonClick"  class="custom-container d-flex align-items-center justify-content-center " @scrollToEducation="scrollToEducation"/>
+
+<hello-grid v-if="VisibilityHelloSection" @buttonClick="handleButtonClick"  class="custom-container d-flex align-items-center justify-content-center " @scrollToEducation="scrollToEducation"/>
 <div ref="educationSection">
-<education-section  v-if="VisiblitySection" class="custom-container position-relative" style=""/>
+<education-section  v-if="VisiblitySectionEducationWork" class="custom-container position-relative" style=""/>
 
 </div>
-<work-section v-if="VisiblitySection" @buttonClick2="handleButtonClick2"  class="custom-container position-relative"> </work-section>
+<work-section v-if="VisiblitySectionEducationWork" @buttonClick2="handleButtonClick2"  class="custom-container position-relative"> </work-section>
 
 
-<skills-section style="min-height: 90vh;" v-if="VisibilitySkillsSection"> </skills-section>
+<skills-section v-if="VisibilitySkillsSection" class="custom-container position-relative" > </skills-section>
 
 
 </template>
@@ -21,17 +22,17 @@ import SkillsSection from './SkillsSection.vue';
 
 
 export default {
-  name: "HelloWorld",
+  name: "HomePage",
   components: { HelloGrid,
     
     EducationSection, workSection,
     SkillsSection
   },
-  data(){return {VisiblitySection: false, VisibilitySkillsSection: false}},
+  data(){return {VisiblitySectionEducationWork: false, VisibilitySkillsSection: false, VisibilityHelloSection: true}},
   methods: {
     handleButtonClick() {
 
-    this.VisiblitySection = true
+    this.VisiblitySectionEducationWork = true
     console.log('Funkcja w komponencie HelloWorld została wywołana');
     console.log(this.$refs['educationSection'])
     
@@ -42,15 +43,11 @@ export default {
   },
   handleButtonClick2() {
       this.VisibilitySkillsSection = true
-      this.VisiblitySection = false
+      this.VisiblitySectionEducationWork = false
+      this.VisibilityHelloSection = false
     }
   
   },
-
-  
-
-  
-  
 };
 </script>
 

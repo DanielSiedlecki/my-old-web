@@ -4,7 +4,7 @@
     
     <navbarComponents></navbarComponents>
    
-    <hello-world></hello-world>
+    <router-view></router-view>
     
 
   
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 import navbarComponents from './components/navbar-components.vue';
 import ArrowScroolUp from './components/Elements/ArrowScroolUp.vue';
 
@@ -22,10 +22,14 @@ import ArrowScroolUp from './components/Elements/ArrowScroolUp.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    
     
     navbarComponents, ArrowScroolUp,
     
+  },
+  beforeRouteUpdate(to, from, next) {
+    document.title = to.meta.title || 'Default';
+    next();
   }
 }
 </script>

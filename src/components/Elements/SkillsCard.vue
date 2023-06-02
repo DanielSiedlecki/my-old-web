@@ -1,7 +1,7 @@
 <template>
   
 
-    <div class="card ms-3" style="width: 16rem; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+    <div class="card ms-3" style="width: 16rem; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); ">
       <ul class="list-group list-group-light list-group-small mr-3">
 
         <li class="list-group-item px-3 " v-html="starlist" style="font-size: 2.5vh;" ></li>
@@ -96,7 +96,7 @@
     @import '../../styles.scss';
 
  
-
+   
     .my-icon{ 
       
       
@@ -109,8 +109,8 @@
     @media only screen and (max-width:1300px){
     
     .my-icon{
-      width: 3vw;
-      height: 3vw;
+      width: 5vw;
+      height: 5vw;
     
     
     }
@@ -118,8 +118,8 @@
     @media only screen and (max-width:650px){
     
     .my-icon{
-      width: 8vw;
-      height: 8vw;
+      width: 10vw;
+      height: 10vw;
     
     
     }

@@ -14,7 +14,8 @@
     "mdb-vue-ui-kit": "^4.0.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

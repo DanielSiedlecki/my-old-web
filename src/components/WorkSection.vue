@@ -1,11 +1,11 @@
 <template>
   <MDBContainer>
     <PageHeader> Work Experience</PageHeader>
-    <MDBRow class="row">
-      <MDBCol class="col-4 col-sm-2 mt-5"> 
+    <MDBRow class="row" style="">
+      <MDBCol class="col-4 col-sm-2 mt-5" > 
         
         
-        <TimeLine >
+        <TimeLine>
           <template v-if="VisibilityDate" #data_start>02.2023</template>
           <template v-if="VisibilityDate" #data_divider>-</template>
           <template v-if="VisibilityDate" #data_end>Ongoing</template>
@@ -15,10 +15,10 @@
       
       </MDBCol>
 
-      <MDBCol class="col-8 col-sm-10 mb-5  "> 
+      <MDBCol class="col-8 col-sm-10 mb-5 "> 
       <div class="row">
               <div class="col-md-12 d-flex justify-content-center ms-lg-3">
-                  <text-container style="max-width: 100vw;">
+                  <text-container  style="max-width: 100vw;">
                   
                   <template #mainheader>ZETO ŚWIDNICA SP Z.O.O.</template>
                   <template v-if="!VisibilityDate" #date  >03.2020 - Ongoing</template>
@@ -56,9 +56,9 @@
         </list-experience>
       </div>
     </div> 
-
-    <button-read-more @click="ButtonClick2()" style="float: right;" text="Show Skills"> </button-read-more>
-
+    <router-link to="/skills">
+    <button-read-more  style="float: right;" text="Show Skills"> </button-read-more>
+  </router-link>
 
       </div>
 
