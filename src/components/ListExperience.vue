@@ -21,7 +21,7 @@
 
 
 <script>
-import PageHeader from './PageHeader.vue'
+import PageHeader from './Elements/PageHeader.vue'
 
 export default {
   components: { PageHeader },

@@ -1,11 +1,11 @@
 <template>
 
-<hello-grid v-if="VisibilityHelloSection" @buttonClick="handleButtonClick"  class="custom-container d-flex align-items-center justify-content-center " @scrollToEducation="scrollToEducation"/>
+<hello-section v-if="VisibilityHelloSection" @buttonClick="handleButtonClick"  class="custom-container d-flex align-items-center justify-content-center " @scrollToEducation="scrollToEducation"/>
 <div ref="educationSection">
-<education-section  v-if="VisiblitySectionEducationWork" class="custom-container position-relative" style=""/>
 
-</div>
-<work-section v-if="VisiblitySectionEducationWork" @buttonClick2="handleButtonClick2"  class="custom-container position-relative"> </work-section>
+
+<work-and-education-section v-if="VisiblitySectionEducationWork" class="custom-container position-relative"/></div>
+
 
 
 <skills-section v-if="VisibilitySkillsSection" class="custom-container position-relative" > </skills-section>
@@ -14,18 +14,17 @@
 </template>
 
 <script>
-import EducationSection from './EducationSection.vue';
-import workSection from './WorkSection.vue'
-import HelloGrid from './HelloGrid.vue'
+import WorkAndEducationSection from './WorkAndEducationSection.vue';
+import HelloSection from './HelloSection.vue'
 import SkillsSection from './SkillsSection.vue';
 
 
 
 export default {
   name: "HomePage",
-  components: { HelloGrid,
+  components: { HelloSection,
     
-    EducationSection, workSection,
+    WorkAndEducationSection,
     SkillsSection
   },
   data(){return {VisiblitySectionEducationWork: false, VisibilitySkillsSection: false, VisibilityHelloSection: true}},
@@ -41,11 +40,6 @@ export default {
     }, 100);
   
   },
-  handleButtonClick2() {
-      this.VisibilitySkillsSection = true
-      this.VisiblitySectionEducationWork = false
-      this.VisibilityHelloSection = false
-    }
   
   },
 };

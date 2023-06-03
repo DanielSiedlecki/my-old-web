@@ -7,7 +7,8 @@
       </span>
     </div>
     <div class="col-md-12 mt-2">
-      <input type="input" v-model="inputName" @keydown.space.prevent class="form-control btn-lg" :class="{'validation': !validation}" :placeholder="validation ? 'Your name' : 'Uzupełnij dane poprawnie'" name="name" id="name" required />
+      <input type="input" v-model="inputName" @keydown.space.prevent class="form-control btn-lg" :class="{'validation': validation || validation1}"
+       :placeholder="validation ? 'Name contains number' : (validation1 ? 'Name is too long' : 'Your Name')" name="name" id="name" required />
     </div>
     <div class="col-md-12 mt-4">
       <div class="row">
@@ -15,7 +16,7 @@
           <default-button-vue text="anonymous" @click="SubmitName('Anon')" class="btn btn-primary btn-block" style="font-size: 1rem"></default-button-vue>
         </div>
         <div class="col-md-6 mt-2">
-          <default-button-vue @click="SubmitName()" text="Next" class="btn btn-secondary btn-block" style="font-size: 1rem"></default-button-vue>
+          <default-button-vue @click="SubmitName(this.inputName)" text="Next" class="btn btn-secondary btn-block" style="font-size: 1rem"></default-button-vue>
         </div>
       </div>
     </div>
@@ -26,60 +27,64 @@
 
 <script>
 
-import DefaultButtonVue from './Elements/DefaultButton.vue';
+import DefaultButtonVue from '../Elements/DefaultButton.vue';
 
 export default {
   components: { DefaultButtonVue },
-  watch:{
-
-    isNameValid(newValue){
-      this.validation = newValue;
-    }
-
-
-  },
-
+  
   methods:{
 
-    SubmitName(){
+    SubmitName(name){
       
-      if (this.isNameValid) {
-        const nameChange = this.inputName.charAt(0).toUpperCase() + this.inputName.slice(1).toLowerCase();
+      if (!this.isNameValid && !this.isNameLengthValid) {
+        const nameChange = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
         this.$emit('data', nameChange)
 
       }
-      else {
-        this.validation = false;
+
+
+    
+      
+      else if(this.isNameLengthValid){
+        this.validation = false
+        this.validation1 = true
+        this.inputName= ''
         
+
+
       }
-
-      console.log(this.NameChar)
-
-    },
-    Validation(name){
-
-      if(name){
-        this.SubmitName(this.inputName)
+      else{
+        this.validation1 = false
+        this.validation = true
+        this.inputName= ''
       }
+      
 
-      else {
-        console.log("error")
-      }
+      
+
     }
+    
   },
 
   data() {
     return {
       inputName: '',
-      validation: true
+      validation: false,
+      
     }
   },
   computed: {
    
   isNameValid(){
     const digitPattern = /\d/;
-    return !digitPattern.test(this.inputName)
+    return digitPattern.test(this.inputName)
+  },
+
+  isNameLengthValid(){
+    return !(this.inputName.length < 15)
   }
+
+  
 
   
 
@@ -90,7 +95,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../styles.scss';
+@import '../../styles.scss';
 
 .row {
   .col-md-4 {

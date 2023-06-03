@@ -1,7 +1,7 @@
 <template>
 
-    <div class="container" style="min-width: 100vw; min-height: 91.1vh;">
-    <div class="row" >
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="row   "  >
         <div class="col-md-4 col-4 d-none d-md-flex  d-flex justify-content-center align-items-center d-none">
 
             <img src="../assets/professional-skills-icon.png" alt="" style="width: 60%; ">
@@ -40,7 +40,7 @@
 <script>
 import SkillsCard from './Elements/SkillsCard.vue'
 import SlideSkillsBar from './Elements/SlideSkillsBar.vue'
-import PageHeader from './PageHeader.vue'
+import PageHeader from './Elements/PageHeader.vue'
 export default {
   components: { SlideSkillsBar, PageHeader, SkillsCard },
 

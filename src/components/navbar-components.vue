@@ -8,8 +8,8 @@
     <MDBCollapse  id="navbarNav" v-model="collapse2">
   <MDBNavbarNav style="list-style: none;  width: 100%; margin-right: 2rem; " class="d-lg-flex  justify-content-lg-end custom-font-size">
     <router-link to="/" class="mx-3 mt-2 custom-border-md-top hover" active-class="active" style="text-decoration: none;"><MDBNavbarItem>Home</MDBNavbarItem></router-link>
-    <router-link  to="/Skills" class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">           <MDBNavbarItem>Skills </MDBNavbarItem></router-link>
-    <router-link  to="#" class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">           <MDBNavbarItem>Example</MDBNavbarItem></router-link>
+    <router-link  to="/Work&Education" class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">           <MDBNavbarItem>Work&Education </MDBNavbarItem></router-link>
+    <router-link  to="/Skills" class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">           <MDBNavbarItem>Skills</MDBNavbarItem></router-link>
     <router-link  to="#" disabled class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">  <MDBNavbarItem>Example </MDBNavbarItem></router-link>
     <router-link  to="#" disabled class="mx-3 mt-2 custom-border-md-top hover " style="text-decoration: none;"> <MDBNavbarItem>Example </MDBNavbarItem></router-link>
     
@@ -51,7 +51,9 @@
 
  .hover:hover {
     color: $blue-global-color;
-    cursor: pointer;
+    cursor: pointer; 
+    transition: 0.3s ease-in;
+    transform: scale(1.1);
   
   }
 @media (max-width: 918px) {

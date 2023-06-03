@@ -1,8 +1,8 @@
 <template>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner me-2 ms-1  ">
-        <div class="carousel-item active " >
-          <div class="row justify-content-center" style="max-width: 100vw;">
+    <div id="carouselExampleControls" class="carousel slide w-100" data-ride="carousel">
+      <div class="carousel-inner " style="width: 100%;">
+        <div class="carousel-item active" >
+          <div class="row justify-content-center " style="">
   
               <skills-card-vue class="col-6 col-md-3 mb-2" :number="3" :icon="`my-icon-adobe-photoshop`" :skill_name="`Adobe Photoshop`" :skill_level="`Regular`"/>
               <skills-card-vue class="col-6 col-md-3 mb-2" :number="3" :icon="`my-icon-figma`" :skill_name="`Figma`" :skill_level="`Regular`" />
@@ -28,7 +28,7 @@
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleControls" style="color:black" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" style="color:black" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>

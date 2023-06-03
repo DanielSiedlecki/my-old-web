@@ -52,9 +52,9 @@ export default {
 <style lang="scss" scoped>
 @import '../styles.scss';
 .text-container {
-  border-left: 0.2vw solid black; /* Obramowanie po lewej stronie */
-  padding-left: 10px; /* Dodatkowy margines wewnątrz kontenera */
-  width: calc(80% - 10px); /* Długość obramowania (połowa szerokości - margines) */
+  border-left: 0.2vw solid black; 
+  padding-left: 10px; 
+  width: calc(80% - 10px); 
 }
 
 .subtitle {

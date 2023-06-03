@@ -1,5 +1,5 @@
 <template>
-  <MDBContainer>
+  <MDBContainer >
     <PageHeader> Work Experience</PageHeader>
     <MDBRow class="row" style="">
       <MDBCol class="col-4 col-sm-2 mt-5" > 
@@ -57,7 +57,7 @@
       </div>
     </div> 
     <router-link to="/skills">
-    <button-read-more  style="float: right;" text="Show Skills"> </button-read-more>
+    <button-with-icon style="float: right;" text="Show Skills" icon="fas fa-angle-down"/>
   </router-link>
 
       </div>
@@ -66,19 +66,19 @@
 
 <script>
 
-import TextContainer from './Text-Container.vue';
+import TextContainer from '../Text-Container.vue';
  import { MDBContainer, MDBRow, MDBCol} from 'mdb-vue-ui-kit'; 
-import TimeLine from './TimeLine.vue'
-import PageHeader from './PageHeader.vue';
-import ListExperience from './ListExperience.vue';
-import ButtonReadMore from './Elements/ButtonReadMore.vue';
+import TimeLine from '../Elements/TimeLine.vue'
+import PageHeader from '../Elements/PageHeader.vue';
+import ListExperience from '../ListExperience.vue';
+import ButtonWithIcon from '../Elements/ButtonWithIcon.vue'
 
 
 
 
 export default {
   
-  components: { TextContainer, MDBContainer, MDBRow, TimeLine, MDBCol,PageHeader, ListExperience, ButtonReadMore },
+  components: { TextContainer, MDBContainer, MDBRow, TimeLine, MDBCol,PageHeader, ListExperience, ButtonWithIcon },
   mounted() {
     this.checkActuallyVisibility()
     window.addEventListener('resize', this.onResize)

@@ -17,7 +17,7 @@
 
 </div>
 <div class="col-md-12 d-flex justify-content-end">
-  <button-read-more-vue @click="emitButtonClick" ></button-read-more-vue>
+  <button-with-icon style="float: right;" text="Show Skills" icon="fas fa-angle-down" @click="emitButtonClick"/>
   
 
 
@@ -34,11 +34,13 @@
 </template>
 
 <script>
-import ButtonReadMoreVue from './Elements/ButtonReadMore.vue'
+import ButtonWithIcon from '../Elements/ButtonWithIcon.vue';
+
 
 export default {
     components: {
-      ButtonReadMoreVue
+        ButtonWithIcon
+      
     },
     props: {
         name:{

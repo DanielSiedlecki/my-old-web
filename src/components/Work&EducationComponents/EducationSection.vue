@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="margin-top: 10vh">
+  <div class="container" style="margin-top: 10vh;  ;">
     <PageHeader> Education & Course</PageHeader>
     <div class="row" >
       <div class="col-4 col-sm-2 mt-5 " style=""> 
@@ -63,11 +63,11 @@
 
 <script>
 
-import TextContainer from './Text-Container.vue';
+import TextContainer from '../Text-Container.vue';
 
-import TimeLine from './TimeLine.vue'
-import PageHeader from './PageHeader.vue';
-import ListExperience from './ListExperience.vue';
+import TimeLine from '../Elements/TimeLine.vue'
+import PageHeader from '../Elements/PageHeader.vue';
+import ListExperience from '../ListExperience.vue';
 
 
 

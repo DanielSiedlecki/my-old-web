@@ -6,7 +6,7 @@
       </div>
       <div class="col-md-8">
         <div>
-          <AboutMeFirst v-show="showAboutMeFirst"  @data="GetData"/>
+          <AboutMeFirst v-if="showAboutMeFirst"  @data="GetData"/>
           <AboutMeSecondVue v-show="showAboutMeSecond" @buttonClick="handleButtonClick" :name="personInfo "></AboutMeSecondVue>
         </div>
       </div>
@@ -21,8 +21,8 @@
 
 
 
-import AboutMeFirst from './AboutMeFirst.vue'
-import AboutMeSecondVue from './AboutMeSecond.vue'
+import AboutMeFirst from './HelloSectionComponents/AboutMeFirst.vue'
+import AboutMeSecondVue from './HelloSectionComponents/AboutMeSecond.vue'
 
 export default {
   components: { AboutMeFirst, AboutMeSecondVue },
@@ -41,13 +41,12 @@ export default {
       console.log("work")
       if (this.personInfo !== '') {
         this.showAboutMeSecond = true;
-        console.log("work2")
-        this.showAboutMeFirst = false;
-        console.log(this.AboutMeFirst)
+        this.showAboutMeFirst = !this.showAboutMeFirst;
+        
       }
     },
     handleButtonClick() {
-      console.log('Funkcja w komponencie 2 została wywołana');
+      
       this.$emit('buttonClick');
     }
   }

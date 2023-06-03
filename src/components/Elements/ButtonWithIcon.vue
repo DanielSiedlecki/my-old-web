@@ -1,7 +1,7 @@
 <template>
   
   <button type="button" class="btn btn-outline-primary d-flex justify-content-center align-items-center" 
-  data-mdb-ripple-color="dark">{{ text }} <i style="font-size: 30px;  margin-left: 0.5rem;" class="fas fa-angle-down"></i> </button>
+  data-mdb-ripple-color="dark">{{ text }} <i style="font-size: 30px;  margin-left: 0.5rem;" :class='icon'></i> </button>
 
 
 </template>
@@ -13,9 +13,12 @@ export default {
         text: {
             type: String,
             default: 'Read More'
+        },
+
+        icon:{
+            type: String,
+            required: true
         }
-
-
     }
 
 
