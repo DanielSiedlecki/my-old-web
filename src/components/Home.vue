@@ -3,8 +3,9 @@
 <hello-section v-if="VisibilityHelloSection" @buttonClick="handleButtonClick"  class="custom-container d-flex align-items-center justify-content-center " @scrollToEducation="scrollToEducation"/>
 <div ref="educationSection">
 
+<work-and-education-section v-if="VisiblitySectionEducationWork" class="custom-container position-relative"/>
 
-<work-and-education-section v-if="VisiblitySectionEducationWork" class="custom-container position-relative"/></div>
+</div>
 
 
 
