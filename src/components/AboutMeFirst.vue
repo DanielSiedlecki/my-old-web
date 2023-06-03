@@ -12,59 +12,81 @@
     <div class="col-md-12 mt-4">
       <div class="row">
         <div class="col-md-6 mt-2">
-          <default-button-vue text="anonymous" @click="submitName('Anon')" class="btn btn-primary btn-block" style="font-size: 1rem"></default-button-vue>
+          <default-button-vue text="anonymous" @click="SubmitName('Anon')" class="btn btn-primary btn-block" style="font-size: 1rem"></default-button-vue>
         </div>
         <div class="col-md-6 mt-2">
-          <default-button-vue @click="validationName" text="Next" class="btn btn-secondary btn-block" style="font-size: 1rem"></default-button-vue>
+          <default-button-vue @click="SubmitName()" text="Next" class="btn btn-secondary btn-block" style="font-size: 1rem"></default-button-vue>
         </div>
       </div>
     </div>
   </div>
+
+  <notifications-corner/>
 </template>
 
 <script>
-import { ref } from 'vue';
+
 import DefaultButtonVue from './Elements/DefaultButton.vue';
 
 export default {
   components: { DefaultButtonVue },
-  setup(_, { emit }) {
-    const inputName = ref('');
-    const validation = ref(true);
+  watch:{
 
-    function submitName(name) {
-      const nameChange = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-      emit('data', nameChange);
-      console.log(nameChange);
+    isNameValid(newValue){
+      this.validation = newValue;
     }
 
-    function validationName() {
-      const name = inputName.value;
 
-      if (name !== '' && name.length >= 3 && name.length <= 12) {
-        const signs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-        let foundLetter = false;
+  },
 
-        signs.forEach((sign) => {
-          if (name.indexOf(sign) !== -1) {
-            foundLetter = true;
-            return;
-          }
-        });
+  methods:{
 
-        if (!foundLetter) {
-          submitName(name);
-        } else {
-          validation.value = false;
-        }
-      } else {
-        validation.value = false;
+    SubmitName(){
+      
+      if (this.isNameValid) {
+        const nameChange = this.inputName.charAt(0).toUpperCase() + this.inputName.slice(1).toLowerCase();
+        this.$emit('data', nameChange)
+
+      }
+      else {
+        this.validation = false;
+        
+      }
+
+      console.log(this.NameChar)
+
+    },
+    Validation(name){
+
+      if(name){
+        this.SubmitName(this.inputName)
+      }
+
+      else {
+        console.log("error")
       }
     }
-
-    return { submitName, inputName, validationName, validation };
   },
-};
+
+  data() {
+    return {
+      inputName: '',
+      validation: true
+    }
+  },
+  computed: {
+   
+  isNameValid(){
+    const digitPattern = /\d/;
+    return !digitPattern.test(this.inputName)
+  }
+
+  
+
+
+
+  },
+}
 </script>
 
 <style lang="scss" scoped>
