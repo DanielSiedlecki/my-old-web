@@ -1,24 +1,26 @@
 <template>
   <div class=" mt-3 container-fluid custom-container d-flex align-items-center justify-content-center">
-
+    
     <div class="row mt-2">
+        
+   
         <div class="col-12">
         
 
-    <div class="row   d-flex justify-content-center ">
-        <div class="col-12 d-flex flex-column flex-md-row d-flex align-items-center  ">
+    <div class="row   d-flex justify-content-center mt-3">
+        <div class="col-12 d-flex  flex-column flex-md-row justify-content-center  d-flex align-items-center  ">
             
 
           <div class="col-6 d-flex justify-content-md-end justify-content-center me-md-3 ">     
-            <img class="pe-3" src="../assets/SocialMediaIcons/Mail.svg" alt="Mail">
-            <img src="../assets/SocialMediaIcons/Github.svg" alt="GitHub">
+           <a href="mailto:siedleckidaniel2001@gmail.com" ><img class="pe-3" src="../assets/SocialMediaIcons/Mail.svg" alt="Mail"> </a>
+            <a href="https://github.com/DanielSiedlecki"> <img src="../assets/SocialMediaIcons/Github.svg" alt="GitHub" ></a>
         </div> 
 
         <div class="col-6 d-flex  justify-content-md-start justify-content-center mt-2">
-            <img class="pe-3" src="../assets/SocialMediaIcons/Linkedin.svg" alt="Linkedin">
+            <a href="https://www.linkedin.com/in/daniel-siedlecki-6b2308263/"><img class="pe-3" src="../assets/SocialMediaIcons/Linkedin.svg" alt="Linkedin"></a>
             <img @click="()=>VisibilityIcon = !VisibilityIcon" v-show="VisibilityIcon" src="../assets/SocialMediaIcons/Telephone.svg" alt="Telephone">
 
-            <div @click="()=>VisibilityIcon = !VisibilityIcon" v-show="!VisibilityIcon" class="telephoneNumber"><h1 class="mt-2">+48 534 166 602</h1></div>
+            <div @click="()=>VisibilityIcon = !VisibilityIcon" v-show="!VisibilityIcon" class="telephoneNumber "><h1 class=" mt-2">+48 534 166 602</h1></div>
         
         </div>
         </div>
@@ -57,21 +59,14 @@ export default {
 
 
 @import '../styles.scss';
-@keyframes slide-right {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(1px);
-            transform: translateX(10px);
-  }}
+
 .custom-container{ 
     
     background-color: $secondary-global-color;
-    min-height: 20vh;
+    min-height: 100%;
     width: 100%;
 
+    
     img:hover {
         transform: scale(1.2);
         cursor: pointer;
@@ -86,13 +81,14 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        animation: slide-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: flipInX;
+        animation-duration: 0.6s; 
         
         
         h1 {
             
             color: $primary-global-color;
-            font-size: 20px;
+            font-size: 18px;
             
             
         }
@@ -100,7 +96,7 @@ export default {
         
         @media screen and (max-width: 780px) { 
             h1 { 
-            font-size: 14px
+            font-size: 10px
             }
         }
         

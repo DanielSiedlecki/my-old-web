@@ -83,7 +83,7 @@
     
           for (this.x = 0; this.x < elementsToAdd; this.x++) {
             this.starTableFill.push('<i style="color: #327CE5" class="far fa-star"></i>');
-            console.log(this.starTableFill);
+            
           }
           this.starlist = this.starTableFill.join('');
           return this.starlist;

@@ -41,21 +41,15 @@
 import SkillsCard from './Elements/SkillsCard.vue'
 import SlideSkillsBar from './Elements/SlideSkillsBar.vue'
 import PageHeader from './Elements/PageHeader.vue'
+import StartScrollTop from '@/GlobalScript/StartScrollTop'
 export default {
   components: { SlideSkillsBar, PageHeader, SkillsCard },
 
+  mixins: [StartScrollTop],
 
+  
 
-  mounted(){
-    this.scrollUp()
-  },
-
-  methods:{
-    scrollUp(){
-
-    document.documentElement.scrollTop = 0
-    }
-  }
+  
 }
 
 
@@ -63,7 +57,9 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+
 
  .card-zoom-hover:hover{
       cursor: pointer;
@@ -76,6 +72,9 @@ export default {
 
 
 img{
+
+    height: 50%;
+    width: 60%;
    
 }
 </style>

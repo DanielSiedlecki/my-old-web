@@ -17,7 +17,7 @@
 
 </div>
 <div class="col-md-12 d-flex justify-content-end">
-  <button-with-icon style="float: right;" text="Show Skills" icon="fas fa-angle-down" @click="emitButtonClick"/>
+  <button-with-icon style="float: right;" text="Read More" icon="fas fa-angle-down" @click="emitButtonClick"/>
   
 
 

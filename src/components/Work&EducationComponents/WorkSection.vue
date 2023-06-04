@@ -57,7 +57,7 @@
       </div>
     </div> 
     <router-link to="/skills">
-    <button-with-icon style="float: right;" text="Show Skills" icon="fas fa-angle-down"/>
+    <button-with-icon style="float: right;" text="Show Skills" icon="fas fa-angle-right"/>
   </router-link>
 
       </div>
@@ -94,7 +94,6 @@ export default {
   methods: {  
 
     ButtonClick2() {
-    console.log("Klik");
     this.$emit('buttonClick2');
   }
     ,
