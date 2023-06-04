@@ -29,7 +29,7 @@
     transform: translateX(-50%); 
     width: 10vw; 
     height: 4px; 
-    background-color:  $blue-global-color;
+    background-color:  $primary-global-color;
     
   }
   </style>

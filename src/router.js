@@ -2,6 +2,7 @@ import Home from './components/Home.vue';
 import SkillsSection from './components/SkillsSection.vue';
 import WorkAndEducationSection from './components/WorkAndEducationSection.vue'
 import { createRouter, createWebHistory } from 'vue-router';
+import Footer from './components/FooterComponent.vue'
 
 
 
@@ -23,6 +24,12 @@ const routes = [
     name: 'Work&Education',
     component: WorkAndEducationSection,
     meta: { title: 'Work&Education,' }
+  },
+  {
+    path: '/Footer',
+    name: 'Footer',
+    component: Footer,
+    meta: { title: 'Footer,' }
   },
 ];
 

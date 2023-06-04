@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../styles.scss';
 button {
-    border: 3px solid #327CE5;
+    border: 3px solid $primary-global-color;
     filter: drop-shadow(0px 4px 3px #000000);
     border-radius: 200px;
     background-color: white;

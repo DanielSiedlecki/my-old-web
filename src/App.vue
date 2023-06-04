@@ -5,6 +5,8 @@
     <navbarComponents></navbarComponents>
    
     <router-view></router-view>
+
+    <footer-component></footer-component>
     
 
   
@@ -17,6 +19,7 @@
 
 import navbarComponents from './components/navbar-components.vue';
 import ArrowScroolUp from './components/Elements/ArrowScroolUp.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
 
 export default {
@@ -25,6 +28,7 @@ export default {
     
     
     navbarComponents, ArrowScroolUp,
+    FooterComponent,
     
   },
   beforeRouteUpdate(to, from, next) {

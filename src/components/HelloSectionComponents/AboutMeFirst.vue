@@ -107,8 +107,8 @@ export default {
   }
   .col-md-8 {
     input {
-      color: $blue-global-color;
-      border: 4px solid $blue-global-color;
+      color: $primary-global-color;
+      border: 4px solid $primary-global-color;
       filter: drop-shadow(0px 4px 3px #000000);
       border-radius: 20px;
       height: 8vh;

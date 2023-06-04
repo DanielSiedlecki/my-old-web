@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../styles.scss';
 button {
-    border: 4px solid #327CE5;
+    border: 4px solid $primary-global-color;
     filter: drop-shadow(0px 4px 3px #000000);
     border-radius: 20px;
     background-color: white;

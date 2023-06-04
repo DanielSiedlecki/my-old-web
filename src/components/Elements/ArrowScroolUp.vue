@@ -45,7 +45,7 @@ data(){ return {
 
 .buttonVisible {
    
-    background-color: $blue-global-color;
+    background-color: $primary-global-color;
     border: none;
     border-radius: 30%;
     position: fixed;

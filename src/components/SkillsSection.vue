@@ -44,7 +44,23 @@ import PageHeader from './Elements/PageHeader.vue'
 export default {
   components: { SlideSkillsBar, PageHeader, SkillsCard },
 
+
+
+  mounted(){
+    this.scrollUp()
+  },
+
+  methods:{
+    scrollUp(){
+
+    document.documentElement.scrollTop = 0
+    }
+  }
 }
+
+
+
+
 </script>
 
 <style>

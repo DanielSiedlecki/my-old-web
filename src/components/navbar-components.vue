@@ -50,7 +50,7 @@
   }
 
  .hover:hover {
-    color: $blue-global-color;
+    color: $primary-global-color;
     cursor: pointer; 
     transition: 0.3s ease-in;
     transform: scale(1.1);
