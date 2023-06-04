@@ -18,18 +18,24 @@
         </div>
       </div>
     </div>
+
+    <add-opinion-tab></add-opinion-tab>
   </template>
+
+
   
   <script>
   import ButtonWithIcon from './Elements/ButtonWithIcon.vue';
   import PageHeader from './Elements/PageHeader.vue';
   import OpinionCard from './Elements/OpinionCard.vue';
+  import {fetchData} from '../http-common.js'
+  import addOpinionTab from './AddOpinionTab.vue'
   
-  import axios from 'axios';
+
     import AppLoader from './Elements/AppLoader.vue';
   
   export default {
-    components: { PageHeader, OpinionCard, ButtonWithIcon, AppLoader },
+    components: { PageHeader, OpinionCard, ButtonWithIcon, AppLoader, addOpinionTab  },
     data() {
       return {
         review_list: null,
@@ -39,14 +45,12 @@
       this.getData();
     },
     methods: {
-      async getData() {
-        try {
-          const response = await axios.get('http://localhost:8080/api/project/published');
-          this.review_list = response.data;
-        } catch (err) {
-          console.error(err);
-        }
-      },
+       async getData() {
+      const data = await fetchData();
+      if (data) {
+        this.review_list = data;
+      }
+    },
     },
   };
   </script>
