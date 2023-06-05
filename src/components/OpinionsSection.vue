@@ -10,7 +10,7 @@
             <div class="row justify-content-center scrollbar" id="style-2" style="overflow: auto; max-height: 50vh;">
               <opinion-card v-for="review in review_list" :value="review" :key="review" :text="review.description" :title="review.title"></opinion-card>
             </div>
-            <button-with-icon class="mt-3" text="Add Opinion" icon="fas fa-plus" style="float: right"></button-with-icon>
+            <button-with-icon class="mt-3" text="Add Opinion" icon="fas fa-plus" style="float: right" @click="emitModalOpen"></button-with-icon>
           </div>
           <div v-else>
             <app-loader></app-loader>
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <add-opinion-tab></add-opinion-tab>
+    <add-opinion-tab class="animation" ref="add_opinion_tab"  ></add-opinion-tab>
   </template>
 
 
@@ -39,6 +39,7 @@
     data() {
       return {
         review_list: null,
+        OpinionVisibility:false
       };
     },
     mounted() {
@@ -51,6 +52,11 @@
         this.review_list = data;
       }
     },
+
+
+    emitModalOpen(){
+      this.$refs.add_opinion_tab.openModal()
+    }
     },
   };
   </script>
@@ -96,5 +102,10 @@ img{
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: $primary-global-color;
+}
+
+.animation {
+  animation: bounceIn;
+  animation-duration: 0.6s; 
 }
 </style>
