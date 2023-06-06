@@ -1,6 +1,6 @@
 <template>
-  <MDBNavbar class="sticky-top" light bg="white" expand="lg" container>
-    <router-link to="/"><MDBNavbarBrand ><img  style="width: 50%; height: 50%; border-bottom: none;" src="" alt=""></MDBNavbarBrand></router-link>
+  <MDBNavbar class="sticky-top mb-3" light bg="white" expand="lg" container >
+    <router-link to="/"><MDBNavbarBrand ><img  style="width: 80%; height: 100%; border-bottom: none;" src="../assets/Navbar/Logo.png" alt=""></MDBNavbarBrand></router-link>
     <MDBNavbarToggler
       target="#navbarNav"
       @click="() => collapse2 = !collapse2"
