@@ -8,7 +8,7 @@
     </div>
     <div class="col-md-12 mt-2">
       <input type="input" v-model="inputName" @keydown.space.prevent class="form-control btn-lg" :class="{'validation': validation || validation1}"
-       :placeholder="validation ? 'Name contains number' : (validation1 ? 'Name is too long' : 'Your Name')" name="name" id="name" required />
+       :placeholder="validation ? 'Name contains number' : (validation1 ? 'Name is too long' : 'Your Name')" name="name" id="name" style="font-size: 28px" required  />
     </div>
     <div class="col-md-12 mt-4">
       <div class="row">

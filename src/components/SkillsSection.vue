@@ -4,7 +4,7 @@
     <div class="row   "  >
         <div class="col-md-4 col-4 d-none d-md-flex  d-flex justify-content-center align-items-center d-none">
 
-            <img src="../assets/professional-skills-icon.png" alt="" style="width: 60%; ">
+            <img src="../assets/professional-skills-icon.png" alt="">
 
         </div>
         <div class="col-8 col-md-8 col-sm-12 mx-auto " >
@@ -73,8 +73,8 @@ export default {
 
 img{
 
-    height: 50%;
-    width: 60%;
+    height: 40%;
+    width: 50%;
    
 }
 </style>

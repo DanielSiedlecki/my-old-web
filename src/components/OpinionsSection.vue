@@ -2,7 +2,7 @@
     <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
       <div class="row">
         <div class="col-md-4 col-4 d-none d-md-flex d-flex justify-content-center align-items-center d-none">
-          <img v-if="review_list" src="../assets/professional-skills-icon.png" alt="" style="width: 60%;">
+          <img v-if="review_list" src="../assets/professional-skills-icon.png" alt="">
         </div>
         <div class="col-8 col-md-8 col-sm-12 mx-auto" style="min-height: 80vh;">
           <page-header v-if="review_list">Opinions</page-header>
@@ -12,8 +12,8 @@
             </div>
             <button-with-icon class="mt-3" text="Add Opinion" icon="fas fa-plus" style="float: right" @click="emitModalOpen"></button-with-icon>
           </div>
-          <div v-else>
-            <app-loader></app-loader>
+          <div v-else  class="justify-content-center d-flex">
+            <app-loader ></app-loader>
           </div>
         </div>
       </div>
@@ -76,8 +76,8 @@
 
 img{
 
-    height: 50%;
-    width: 60%;
+  height: 40%;
+    width: 50%;
    
 }
 

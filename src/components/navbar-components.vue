@@ -1,13 +1,13 @@
 <template>
   <MDBNavbar class="sticky-top" light bg="white" expand="lg" container>
-    <router-link to="/"><MDBNavbarBrand ><img  style="width: 50%; height: 50%;" src="../assets/Logo_NavBar.svg" alt=""></MDBNavbarBrand></router-link>
+    <router-link to="/"><MDBNavbarBrand ><img  style="width: 50%; height: 50%; border-bottom: none;" src="../assets/Logo_NavBar.svg" alt=""></MDBNavbarBrand></router-link>
     <MDBNavbarToggler
       target="#navbarNav"
-      @click="collapse2 = !collapse2"
+      @click="() => collapse2 = !collapse2"
     ></MDBNavbarToggler>
     <MDBCollapse  id="navbarNav" v-model="collapse2">
   <MDBNavbarNav style="list-style: none;  width: 100%; margin-right: 2rem; " class="d-lg-flex  justify-content-lg-end custom-font-size">
-    <router-link @click="ScrollUp" to="/" class="mx-3 mt-2 custom-border-md-top hover" active-class="active" style="text-decoration: none;"><MDBNavbarItem>Home</MDBNavbarItem></router-link>
+    <router-link @click="ScrollUp"  to="/" class="mx-3 mt-2 custom-border-md-top hover" active-class="active" style="text-decoration: none;"><MDBNavbarItem>Home</MDBNavbarItem></router-link>
     <router-link @click="ScrollUp" to="/Work&Education" class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">           <MDBNavbarItem>Work&Education </MDBNavbarItem></router-link>
     <router-link @click="ScrollUp" to="/Skills" class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">           <MDBNavbarItem>Skills</MDBNavbarItem></router-link>
     <router-link @click="ScrollUp" to="/Opinions" disabled class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">  <MDBNavbarItem>Opinions </MDBNavbarItem></router-link>
@@ -37,19 +37,47 @@
       MDBNavbarItem,
       MDBCollapse,
     },
-    setup() {
-      const collapse2 = ref(false);
-      return { collapse2 };
+
+    data(){
+
+      return{
+        windowWidth: 0,
+        collapse2: ref(false)
+      }
     },
 
 
-    methods:{ScrollUp(){
+    mounted(){
+      window.addEventListener('resize', this.HiddenMenu)
+    },
+
+
+    methods:{
+      ScrollUp(){
+      this.windowWidth = window.innerWidth
       document.documentElement.scrollTop = 0
-    }}
+
+      if(this.windowWidth <= 911){
+        this.collapse2 = !this.collapse2
+      }
+    },
+    
+    
+    
+   
+
+
+    }
   };
 </script>
 <style lang="scss" scoped>
 @import "../styles.scss";
+
+.exact-active-link {
+    color: $secondary-global-color;
+    
+    
+}
 .custom-font-size {
     font-size: 28px
   }

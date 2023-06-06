@@ -36,6 +36,11 @@ button {
     
 }
 
+button:hover{
+    background-color: $primary-global-color;
+    color: white;
+}
+
 
 </style>
 

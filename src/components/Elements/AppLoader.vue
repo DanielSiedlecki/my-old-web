@@ -13,7 +13,7 @@ export default {
 @import '../../styles.scss';
 .lds-ring {
   display: inline-block;
-  position: relative;
+  position: absolute;
   width: 80px;
   height: 80px;
 }
@@ -23,7 +23,7 @@ export default {
   position: absolute;
   width: 64px;
   height: 64px;
-  margin: 8px;
+  
   border: 8px solid $primary-global-color;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
