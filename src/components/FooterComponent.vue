@@ -12,13 +12,13 @@
             
 
           <div class="col-6 d-flex justify-content-md-end justify-content-center me-md-3 ">     
-           <a href="mailto:siedleckidaniel2001@gmail.com" ><img class="pe-3" src="../assets/SocialMediaIcons/Mail.svg" alt="Mail"> </a>
-            <a href="https://github.com/DanielSiedlecki"> <img src="../assets/SocialMediaIcons/Github.svg" alt="GitHub" ></a>
+           <a href="mailto:siedleckidaniel2001@gmail.com" ><img class="pe-3" src="../assets/icons/SocialMediaFooter/Mail.svg" alt="Mail"> </a>
+            <a href="https://github.com/DanielSiedlecki"> <img src="../assets/icons/SocialMediaFooter/Github.svg" alt="GitHub" ></a>
         </div> 
 
         <div class="col-6 d-flex  justify-content-md-start justify-content-center mt-2">
-            <a href="https://www.linkedin.com/in/daniel-siedlecki-6b2308263/"><img class="pe-3" src="../assets/SocialMediaIcons/Linkedin.svg" alt="Linkedin"></a>
-            <img @click="()=>VisibilityIcon = !VisibilityIcon" v-show="VisibilityIcon" src="../assets/SocialMediaIcons/Telephone.svg" alt="Telephone">
+            <a href="https://www.linkedin.com/in/daniel-siedlecki-6b2308263/"><img class="pe-3" src="../assets/icons/SocialMediaFooter/Linkedin.svg" alt="Linkedin"></a>
+            <img @click="()=>VisibilityIcon = !VisibilityIcon" v-show="VisibilityIcon" src="../assets/icons/SocialMediaFooter/Telephone.svg" alt="Telephone">
 
             <div @click="()=>VisibilityIcon = !VisibilityIcon" v-show="!VisibilityIcon" class="telephoneNumber "><h1 class=" mt-2">+48 534 166 602</h1></div>
         

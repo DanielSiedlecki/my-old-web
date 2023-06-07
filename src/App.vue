@@ -17,9 +17,12 @@
 
 <script>
 
+
+
 import navbarComponents from './components/navbar-components.vue';
 import ArrowScroolUp from './components/Elements/ArrowScroolUp.vue';
 import FooterComponent from './components/FooterComponent.vue';
+
 
 
 export default {
@@ -28,14 +31,19 @@ export default {
     
     
     navbarComponents, ArrowScroolUp,
-    FooterComponent,
+    FooterComponent, 
     
   },
+  
+  
   beforeRouteUpdate(to, from, next) {
     document.title = to.meta.title || 'Default';
     next();
+
   }
-}
+  
+  }
+
 </script>
 
 <style scope lang="scss">

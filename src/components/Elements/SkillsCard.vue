@@ -128,17 +128,17 @@
 
 
     //icon_list
-    .my-icon-node {background: url(../../assets/SkillsIcon/icons8-node-js-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-angular {background: url(../../assets/SkillsIcon/icons8-angular-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-js {background: url(../../assets/SkillsIcon/icons8-javascript-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-ts {background: url(../../assets/SkillsIcon/icons8-typescript-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-vue {background: url(../../assets/SkillsIcon/icons8-vue-js-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-html {background: url(../../assets/SkillsIcon/icons8-html-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-css {background: url(../../assets/SkillsIcon/icons8-css-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-python {background: url(../../assets/SkillsIcon/icons8-python-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-git {background: url(../../assets/SkillsIcon/icons8-git-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-figma {background: url(../../assets/SkillsIcon/icons8-figma-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-adobe-photoshop {background: url(../../assets/SkillsIcon/icons8-adobe-photoshop-32.png) no-repeat;transform: scale(0.8);}
-    .my-icon-microsoft {background: url(../../assets/SkillsIcon/icons8-microsoft-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-node {background: url(../../assets/icons/Skills/icons8-node-js-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-angular {background: url(../../assets/icons/Skills/icons8-angular-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-js {background: url(../../assets/icons/Skills/icons8-javascript-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-ts {background: url(../../assets/icons/Skills/icons8-typescript-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-vue {background: url(../../assets/icons/Skills/icons8-vue-js-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-html {background: url(../../assets/icons/Skills/icons8-html-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-css {background: url(../../assets/icons/Skills/icons8-css-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-python {background: url(../../assets/icons/Skills/icons8-python-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-git {background: url(../../assets/icons/Skills/icons8-git-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-figma {background: url(../../assets/icons/Skills/icons8-figma-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-adobe-photoshop {background: url(../../assets/icons/Skills/icons8-adobe-photoshop-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-microsoft {background: url(../../assets/icons/Skills/icons8-microsoft-32.png) no-repeat;transform: scale(0.8);}
 
     </style>

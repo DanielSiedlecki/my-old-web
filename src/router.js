@@ -2,8 +2,8 @@ import Home from './components/Home.vue';
 import SkillsSection from './components/SkillsSection.vue';
 import WorkAndEducationSection from './components/WorkAndEducationSection.vue'
 import { createRouter, createWebHistory } from 'vue-router';
-import Footer from './components/FooterComponent.vue'
 import OpinionsSection from './components/OpinionsSection.vue'
+import ContactSection from './components/ContactSection.vue'
 
 
 
@@ -26,17 +26,19 @@ const routes = [
     component: WorkAndEducationSection,
     meta: { title: 'Work&Education,' }
   },
-  {
-    path: '/Footer',
-    name: 'Footer',
-    component: Footer,
-    meta: { title: 'Footer,' }
-  },
+  
   {
     path: '/Opinions',
     name: 'Opinions',
     component: OpinionsSection,
     meta: { title: 'Opinions,,' }
+  },
+
+  {
+    path: '/Contact',
+    name: 'Contact',
+    component: ContactSection,
+    meta: { title: 'Contact,' }
   },
 ];
 
