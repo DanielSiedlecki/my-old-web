@@ -1,6 +1,6 @@
 <template>
     
-    <div class="row d-flex justify-content-start">
+    <div class="row d-flex justify-content-md-start justify-content-sm-center ">
     <div class="">    
     <h1 class="display-5">Contact Us</h1>
     <p class="ms-1"> if you have any questions</p>

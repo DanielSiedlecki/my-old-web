@@ -37,7 +37,7 @@ export default {
     console.log(this.$refs['educationSection'])
     
     setTimeout(() => {
-      this.$refs['educationSection'].scrollIntoView({ behavior: "smooth" });
+      this.$refs["educationSection"].scrollIntoView({ behavior: "smooth" });
     }, 100);
   
   },
@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
 
 @import '../styles.scss';

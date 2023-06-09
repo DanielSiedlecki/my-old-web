@@ -1,6 +1,6 @@
 <template>
   <MDBNavbar class="sticky-top mb-3" light bg="white" expand="lg" container >
-    <router-link to="/"><MDBNavbarBrand ><img  style="width: 80%; height: 100%; border-bottom: none;" src="../assets/Navbar/Logo.png" alt=""></MDBNavbarBrand></router-link>
+    <router-link to="/"><MDBNavbarBrand ><img  style="width: 60%; height: 60%; border-bottom: none;" src="../assets/Navbar/Logo.png" alt=""></MDBNavbarBrand></router-link>
     <MDBNavbarToggler
       target="#navbarNav"
       @click="() => collapse2 = !collapse2"
@@ -11,7 +11,7 @@
     <router-link @click="ScrollUp" to="/Work&Education" class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">           <MDBNavbarItem>Work&Education </MDBNavbarItem></router-link>
     <router-link @click="ScrollUp" to="/Skills" class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">           <MDBNavbarItem>Skills</MDBNavbarItem></router-link>
     <router-link @click="ScrollUp" to="/Opinions" disabled class="mx-3 mt-2 custom-border-md-top hover" style="text-decoration: none;">  <MDBNavbarItem>Opinions </MDBNavbarItem></router-link>
-    <router-link @click="ScrollUp" to="#" disabled class="mx-3 mt-2 custom-border-md-top hover " style="text-decoration: none;"> <MDBNavbarItem>Example </MDBNavbarItem></router-link>
+    <router-link @click="ScrollUp" to="/Contact" disabled class="mx-3 mt-2 custom-border-md-top hover " style="text-decoration: none;"> <MDBNavbarItem>Contact </MDBNavbarItem></router-link>
     
   </MDBNavbarNav>
 </MDBCollapse>
@@ -78,7 +78,7 @@
     
 }
 .custom-font-size {
-    font-size: 28px
+    font-size: 24px
   }
 
  .hover:hover {
@@ -98,7 +98,7 @@
   }
 
   .custom-font-size {
-    font-size: 24px
+    font-size: 18px
   }
 }
 

@@ -7,7 +7,7 @@
       <div class="col-md-8">
         <div>
           <AboutMeFirst v-if="showAboutMeFirst"  @data="GetData"/>
-          <AboutMeSecondVue v-show="showAboutMeSecond" @buttonClick="handleButtonClick" :name="personInfo "></AboutMeSecondVue>
+          <AboutMeSecondVue v-if="showAboutMeSecond" @buttonClick="handleButtonClick" :name="personInfo "></AboutMeSecondVue>
         </div>
       </div>
     </div>
@@ -40,8 +40,12 @@ export default {
       this.personInfo = data;
       console.log("work")
       if (this.personInfo !== '') {
+        
+        console.log(this.showAboutMeSecond)
         this.showAboutMeSecond = true;
         this.showAboutMeFirst = !this.showAboutMeFirst;
+        console.log("wszystko dziala")
+        console.log(this.showAboutMeSecond)
         
       }
     },

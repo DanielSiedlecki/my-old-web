@@ -26,17 +26,14 @@
 
 import ContactForm from './ContactSectionComponents/ContactForm.vue'
 import ContactInform from './ContactSectionComponents/ContactInform.vue'
-import { useRecaptchaInstance } from "vue-recaptcha-v3";
+
 
 export default {
   components: { ContactInform, ContactForm },
   
 
 
-  mounted() {
-  const recaptchaInstance = useRecaptchaInstance();
-  recaptchaInstance.loaderOptions.autoHideBadge = false;
-}
+
 }
 
 </script>

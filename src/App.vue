@@ -4,7 +4,7 @@
     
     <navbarComponents></navbarComponents>
    
-    <router-view></router-view>
+    <router-view ref="appContainer"></router-view>
 
     <footer-component></footer-component>
     
@@ -34,15 +34,19 @@ export default {
     FooterComponent, 
     
   },
+
+  
   
   
   beforeRouteUpdate(to, from, next) {
     document.title = to.meta.title || 'Default';
     next();
 
-  }
+  } }
+
+
   
-  }
+
 
 </script>
 

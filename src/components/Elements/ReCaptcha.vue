@@ -20,7 +20,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import '../../styles.scss';
+button:hover {
+  background-color: $secondary-global-color;
+}
 
 
 </style>
