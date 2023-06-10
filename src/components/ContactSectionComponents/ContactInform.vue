@@ -7,7 +7,7 @@
 
     </div>
     <div class="col-12 mt-md-4 mt-sm-2 mb-2">
-      <span class="d-flex justify-content-start  align-items-center "><img class="border" src="../../assets/icons/Contact/Mail-Fill.png"><p class="ms-md-5 ms-sm-2 mt-3">siedleckidaniel2001@gmail.com</p></span>
+      <span class="d-flex justify-content-start  align-items-center "><img src="../../assets/icons/Contact/Mail-Fill.png"><p class="ms-md-5 ms-sm-2 mt-3">siedleckidaniel2001@gmail.com</p></span>
 
 
     </div>
