@@ -19,6 +19,7 @@
     text-align: center;
     position: relative;
     font-size: 3.5vh; 
+    color:black
   }
 .header_name::after {
     content: ''; 
