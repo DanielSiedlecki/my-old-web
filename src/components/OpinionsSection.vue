@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="container-fluid d-flex justify-content-center align-items-center animate__animated animate__fadeIn"  style="min-height: 100vh;">
       <div class="row">
         <div class="col-md-4 col-4 d-none d-md-flex d-flex justify-content-center align-items-center d-none">
           <img v-if="review_list" src="../assets/professional-skills-icon.png" alt="">
@@ -52,7 +52,7 @@
       if (data) {
         this.review_list = data;
         this.length_list = this.review_list.length
-        console.log(this.length_list)
+        
        
       }
     },

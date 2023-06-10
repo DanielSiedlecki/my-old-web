@@ -100,15 +100,15 @@ export default {
       }
     },
     checkActuallyVisibility(){
-      console.log(this.actuallyWidth)
+      
       if(this.actuallyWidth >= 920) {
-        console.log(this.VisibilityDate)
+        
         this.VisibilityDate = true
       }
       else {
         
         this.VisibilityDate = false
-        console.log(this.VisibilityDate + "else")
+        
       }
 
 
@@ -150,6 +150,10 @@ export default {
 .text-container {
   flex: 1;
   overflow: auto;
+}
+.animation {
+  animation: fadeInDown;
+  animation-duration: 0.5s;
 }
 
 

@@ -1,7 +1,8 @@
 <template>
+  <div class="animate__animated animate__fadeIn ">
   <education-section style="position-relative"/>
   <work-section style="position-relative" />
-
+</div>
 </template>
 
 <script>

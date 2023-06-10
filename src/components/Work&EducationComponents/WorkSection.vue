@@ -1,5 +1,5 @@
 <template>
-  <MDBContainer >
+  <MDBContainer>
     <PageHeader> Work Experience</PageHeader>
     <MDBRow class="row" style="">
       <MDBCol class="col-4 col-sm-2 mt-5" > 
@@ -109,7 +109,7 @@ export default {
       }
     },
     checkActuallyVisibility(){
-      console.log(this.actuallyWidth)
+      
       if(this.actuallyWidth >= 920) {
         
         this.VisibilityDate = true

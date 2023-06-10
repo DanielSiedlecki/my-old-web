@@ -77,7 +77,7 @@
           const elementsToAdd = Math.min(remainingSlots, 5);
     
           if (remainingSlots === 0) {
-            console.log("Tablica jest pełna");
+            
             return;
           }
     

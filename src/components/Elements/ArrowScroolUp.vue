@@ -12,7 +12,7 @@ mounted(){window.addEventListener("scroll", this.checkVisibility)},
 
 methods:{checkVisibility(){
     if(window.scrollY >= 200) { 
-        console.log("Wyświetl przycisk")
+        
         this.isVisible = false
         return this.isVisible
     }else {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container animate__animated animate__fadeIn">
     <div class="row">
       <div class="col-md-4 d-flex justify-content-center align-items-center ">
         <img src="../assets/HelloSection/Avatar-Photo-square.png" class="img-fluid">
@@ -38,14 +38,13 @@ export default {
   methods: {
     GetData(data) {
       this.personInfo = data;
-      console.log("work")
+      
       if (this.personInfo !== '') {
         
-        console.log(this.showAboutMeSecond)
+        
         this.showAboutMeSecond = true;
         this.showAboutMeFirst = !this.showAboutMeFirst;
-        console.log("wszystko dziala")
-        console.log(this.showAboutMeSecond)
+        
         
       }
     },
@@ -75,4 +74,6 @@ export default {
     }
   }
 }
+
+
 </style>

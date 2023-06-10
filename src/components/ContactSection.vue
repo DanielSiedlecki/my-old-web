@@ -1,5 +1,5 @@
 <template>
-<div class="container" style="min-height: 90vh;">
+<div class="container animate__animated animate__fadeIn" style="min-height: 90vh; ">
 
 <div class="row d-flex justify-content-md-center justify-content-sm-start align-items-center" style="min-height: 80vh;">
 

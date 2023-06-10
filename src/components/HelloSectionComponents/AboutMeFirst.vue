@@ -7,16 +7,16 @@
       </span>
     </div>
     <div class="col-md-12 mt-2">
-      <input type="input" v-model="inputName" @keydown.space.prevent class="form-control btn-lg" :class="{'validation': validation || validation1}"
+      <input type="input" v-model="inputName" @keydown.space.prevent class="form-control btn-lg animate__animated animate__pulse animate__infinite" :class="{'validation': validation || validation1}"
        :placeholder="validation ? 'Name contains number' : (validation1 ? 'Name is too long' : 'Your Name')" name="name" id="name" style="font-size: 28px" required  />
     </div>
     <div class="col-md-12 mt-4">
       <div class="row">
         <div class="col-md-6 mt-2">
-          <default-button-vue text="anonymous" @click="SubmitName('Anon')" class="btn btn-primary btn-block" style="font-size: 1rem"></default-button-vue>
+          <default-button-vue text="anonymous" @click="SubmitName('Anon')" class="btn btn-primary btn-block "  style="font-size: 1rem"></default-button-vue>
         </div>
         <div class="col-md-6 mt-2">
-          <default-button-vue @click="SubmitName(this.inputName)" text="Next" class="btn btn-secondary btn-block" style="font-size: 1rem"></default-button-vue>
+          <default-button-vue @click="SubmitName(this.inputName)" text="Next" class="btn btn-secondary btn-block " style="font-size: 1rem"></default-button-vue>
         </div>
       </div>
     </div>

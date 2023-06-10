@@ -124,7 +124,7 @@ export default {
       OpinionDataService.create(data)
         .then(response => {
 
-          console.log(response.data.id)
+          
           this.opinion.id = response.data.id;
           this.closeModal()
           this.VisibilitySuccessToast = true
