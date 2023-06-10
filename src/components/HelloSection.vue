@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 d-flex justify-content-center align-items-center ">
-        <img src="../assets/Avatar-Photo-square.png" class="img-fluid">
+        <img src="../assets/HelloSection/Avatar-Photo-square.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <div>
