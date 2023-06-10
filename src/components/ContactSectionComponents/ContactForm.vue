@@ -9,15 +9,15 @@
 
     <div class="row ">
         <div class="col-12 mt-4">
-        <input placeholder="Full Name"/>   
+        <input v-model="fullname" :class="{'validation' : fullnameValid}" :placeholder="!fullnameValid ? 'Fullname' : 'Field cannot be empty'"/>   
         </div>
         
         <div class="col-12 mt-4">
-            <input placeholder="Email"/>
+            <input v-model="email" :class="{'validation' : mailValid}" :placeholder="!mailValid ? 'Email' : 'Field cannot be empty'"/>
         </div>
         
         <div class="col-12 mt-4 " >
-            <textarea placeholder="Text" ></textarea> 
+            <textarea v-model="textarea" :class="{'validation' : textareaValid}" :placeholder="!textareaValid ? 'Text' : 'Field cannot be empty' " ></textarea> 
         </div>
         
         
@@ -41,7 +41,7 @@
     <script>
 import ReCaptcha from '../Elements/ReCaptcha.vue'
 import NotAvailableToast from '../Toats/NotAvailableToast.vue'
-
+import {Valid} from '../../Scripts/ValidScript.js'
 
 
    
@@ -49,14 +49,58 @@ import NotAvailableToast from '../Toats/NotAvailableToast.vue'
       components: {ReCaptcha, NotAvailableToast, },
         data(){
             return{
-                VisibilityAvaibleToast: false
+                fullname: '',
+                email: '',
+                textarea: '',
+
+                VisibilityAvaibleToast: false,
+
+                fullnameValid: false,
+                mailValid: false,
+                textareaValid: false,
+
+
             }
         },
         methods:{
 
             Submit(){
-                this.VisibilityAvaibleToast = true
+
+                
+                
+
+                if(Valid(this.fullname)){
+                    this.fullnameValid = true
+                    
+                }
+                if(Valid(this.email)){
+                    this.mailValid = true
+                }
+                if(Valid(this.textarea)){
+                    this.textareaValid = true
+                }
+
+                else{
+                    this.VisibilityAvaibleToast = true
+                    this.Send()
+                }
+
+
+                
             },
+            Send(){
+                this.fullname = ''
+                this.email = ''
+                this.textarea = ''
+                this.fullnameValid = !this.fullnameValid
+                this.mailValid = !this.mailValid
+                this.textareaValid = !this.textareaValid
+
+
+
+
+            },
+
             destroyToastFunction(){
                 this.VisibilityAvaibleToast = false
             }
@@ -109,6 +153,8 @@ import NotAvailableToast from '../Toats/NotAvailableToast.vue'
         border-radius: 10px;
         border: 1px solid $primary-global-color
     }
-
+    .validation {
+        border: 1px solid red;
+    }
     
     </style>

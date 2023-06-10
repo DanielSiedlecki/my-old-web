@@ -27,6 +27,7 @@
     MDBCollapse,
   } from 'mdb-vue-ui-kit';
   import { ref } from 'vue';
+  import { ScrollToTop } from '@/Scripts/ScrollToTop';
 
   export default {
     components: {
@@ -54,7 +55,7 @@
     methods:{
       ScrollUp(){
       this.windowWidth = window.innerWidth
-      document.documentElement.scrollTop = 0
+      ScrollToTop()
 
       if(this.windowWidth <= 911){
         this.collapse2 = !this.collapse2

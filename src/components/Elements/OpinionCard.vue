@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { uniqueId} from 'lodash'
+
 export default {
     props:{
         title: {
@@ -37,10 +39,32 @@ export default {
         }
 
 
+
     },
-    data(){return {
+    mounted() {
+        this.componentId = uniqueId();
+
+
+        const hoverLikeUpValue = localStorage.getItem(`hoverLikeUp_${this.componentId}`);
+        if (hoverLikeUpValue !== null) {
+        this.hoverLikeUp = JSON.parse(hoverLikeUpValue);
+        
+        
+        }
+        const hoverLikeDownValue = localStorage.getItem(`hoverLikeDown_${this.componentId}`);
+        if (hoverLikeDownValue !== null) {
+        this.hoverLikeDown = JSON.parse(hoverLikeDownValue);
+       
+        }
+
+
+  },
+    data(){
+        return {
         hoverLikeUp: false,
-        hoverLikeDown: false
+        hoverLikeDown: false,
+        componentId: ''
+
     }},
 
     methods:{
@@ -49,10 +73,15 @@ export default {
 
             this.hoverLikeUp = !this.hoverLikeUp
             this.hoverLikeDown = false
+
+            localStorage.setItem(`hoverLikeUp_${this.componentId}`, JSON.stringify(this.hoverLikeUp));
+            localStorage.setItem(`hoverLikeDown_${this.componentId}`, JSON.stringify(this.hoverLikeDown));
         },
         HoverLikeDown(){
             this.hoverLikeDown = !this.hoverLikeDown
             this.hoverLikeUp = false
+            localStorage.setItem(`hoverLikeUp_${this.componentId}`, JSON.stringify(this.hoverLikeUp));
+            localStorage.setItem(`hoverLikeDown_${this.componentId}`, JSON.stringify(this.hoverLikeDown));
         }
 
 

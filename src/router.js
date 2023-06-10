@@ -38,7 +38,7 @@ const routes = [
     path: '/Contact',
     name: 'Contact',
     component: ContactSection,
-    meta: { title: 'Contact,' }
+    meta: { title: 'Contact' }
   },
 ];
 

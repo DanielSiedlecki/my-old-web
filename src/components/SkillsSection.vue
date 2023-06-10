@@ -17,9 +17,9 @@
             <skills-card class="col-4 mb-2 card-zoom-hover" :number="2" :icon="`my-icon-ts`" :skill_name="`TypeScript`" :skill_level="`Junior`" />
             <skills-card class="col-4 mb-2 card-zoom-hover" :number="3" :icon="`my-icon-js`" :skill_name="`JavaScript`" :skill_level="`Regular`" />
             <skills-card class="col-4 mb-2 card-zoom-hover" :number="3" :icon="`my-icon-vue`" :skill_name="`Vue.js`" :skill_level="`Regular`" />
-            <skills-card class="col-4 mb-2 card-zoom-hover" :number="4" :icon="`my-icon-html`" :skill_name="`HTML`" :skill_level="`Regular+`" />
+            <skills-card class="col-4 mb-2 card-zoom-hover" :number="3" :icon="`my-icon-html`" :skill_name="`HTML`" :skill_level="`Regular`" />
             <skills-card class="col-4 mb-2 card-zoom-hover" :number="3" :icon="`my-icon-css`" :skill_name="`CSS`" :skill_level="`Regular`" />
-            <skills-card class="col-4 mb-2 card-zoom-hover" :number="3" :icon="`my-icon-python`" :skill_name="`Python`" :skill_level="`Regular`" />
+            <skills-card class="col-4 mb-2 card-zoom-hover" :number="2" :icon="`my-icon-python`" :skill_name="`Python`" :skill_level="`Junior`" />
             
         </div>
 

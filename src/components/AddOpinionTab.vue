@@ -13,20 +13,20 @@
           <div class="modal-body">
            <div class="row d-flex justify-content-center">
             <div class="col-6">
-            <input type="text" style="font-size: 26px" v-model="title_name" placeholder="Name" maxlength="10" @keydown.space.prevent> 
+            <input type="text" style="font-size: 18px" v-model="title_name" :class="{'validation' : Validname}" :placeholder="!Validname ? 'Name' : 'Field cannot be empty' " maxlength="10" @keydown.space.prevent> 
           </div>
           <div class="col-6">
-            <input type="text" style="font-size: 26px" v-model="title_surname" placeholder="Surname" maxlength="10" @keydown.space.prevent>
+            <input type="text" style="font-size: 18px" v-model="title_surname" :class="{'validation' : Validsurname}"  :placeholder="!Validsurname ? 'Surname' : 'Field cannot be empty' " maxlength="10" @keydown.space.prevent>
           </div>
           
           </div>
-            <textarea v-model="descriptionModel" class="mt-2" :class="{'borderValidation' : characterCount === 100} " maxlength="100">Enter text here...</textarea>
+            <textarea v-model="descriptionModel" class="mt-2" :class="{'borderValidation' : characterCount === 100, 'validation' : Validtextarea}" :placeholder="!Validtextarea ? 'Text Area' : 'Field cannot be empty' "  maxlength="100">Enter text here...</textarea>
 
            <p style="float:right"> {{ characterCount }} / 100</p>
           </div>
           <div class="modal-footer" style="border:none">
             <button type="button" class="btn btn-secondary " data-dismiss="modal" @click="closeModal">Close</button>
-            <button type="button" class="btn btn-primary custom-color" @click="saveOpinion()">Add Opinion</button>
+            <button type="button" class="btn btn-primary custom-color" @click="Submit()">Add Opinion</button>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
 import OpinionDataService from '../services/DataService.js'
 import ErrorToast from './Toats/ErrorToast.vue';
 import SuccessToast from './Toats/SuccessToast.vue';
-
+import { Valid } from '@/Scripts/ValidScript';
 
 
 export default {
@@ -65,6 +65,10 @@ export default {
   data() {
     return {
       
+      Validname: false,
+      Validsurname: false,
+      Validtextarea: false,
+
       characterCount:0,
       title_name: '',
       title_surname: '',
@@ -88,6 +92,29 @@ export default {
     }
   },
   methods: {
+    Submit(){
+      if(Valid(this.title_name)){
+        this.Validname = true
+      }
+      
+      if(Valid(this.title_surname)){
+        this.Validsurname = true
+        
+      }
+      
+      if(Valid(this.descriptionModel)){
+        this.Validtextarea = true
+        
+      }
+      else{
+        
+        this.saveOpinion()
+      }
+
+    },
+
+
+
     saveOpinion() {
       var data = {
         title: this.title_name + ' ' + this.title_surname,
@@ -109,7 +136,7 @@ export default {
           this.closeModal()
           this.VisibilityErrorToast = true
         });
-
+        this.ClearInput()
 
     },
 
@@ -131,8 +158,16 @@ export default {
       this.VisibilityErrorToast = false
       this.VisibilitySuccessToast = false
 
-    }
+    },
+    ClearInput(){
+    this.title_name = ''
+    this.title_surname = ''
+    this.descriptionModel = ''
   }
+  },
+  
+
+
   }
 
 </script>
@@ -168,12 +203,18 @@ textarea, input{
 button{
   border-radius: 20px;
 }
+textarea {
+  height: 50%;
+}
 
 
 
 .borderValidation:focus {
   outline-color: red
 }
+.validation {
+        border: 1px solid red;
+    }
 
 
 

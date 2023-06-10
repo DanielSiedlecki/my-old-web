@@ -14,8 +14,8 @@
         <div class="carousel-item  ">
           <div class="row justify-content-center ">
   
-              <skills-card-vue class="col-6 col-md-3 mb-2 w-auto " :number="3" :icon="`my-icon-git`" :skill_name="`GIT`" :skill_level="`Regular`" />
-              <skills-card-vue class="col-6 col-md-3 mb-2 w-auto " :number="3" :icon="`my-icon-microsoft`" :skill_name="`Windows Server`" :skill_level="`Regular`" />
+              <skills-card-vue class="col-6 col-md-3 mb-2 w-auto " :number="2" :icon="`my-icon-git`" :skill_name="`GIT`" :skill_level="`Junior`" />
+              <skills-card-vue class="col-6 col-md-3 mb-2 w-auto " :number="2" :icon="`my-icon-microsoft`" :skill_name="`Windows Server`" :skill_level="`Junior`" />
              
             
              

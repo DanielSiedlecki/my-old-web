@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { ScrollToTop } from '@/Scripts/ScrollToTop'
 export default {
 
 mounted(){window.addEventListener("scroll", this.checkVisibility)},
@@ -25,7 +26,7 @@ methods:{checkVisibility(){
 
 scrollUp(){
 
-    document.documentElement.scrollTop = 0
+   ScrollToTop()
 }
    
     

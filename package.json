@@ -15,11 +15,13 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "core-js": "^3.8.3",
+    "lodash": "^4.17.21",
     "mdb-vue-ui-kit": "^4.0.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "ts-loader": "^9.4.3",
     "vue": "^3.2.13",
+    "vue-cookies": "^1.8.3",
     "vue-demi": "^0.14.5",
     "vue-router": "^4.2.2",
     "vue-template-loader": "^1.1.0"
