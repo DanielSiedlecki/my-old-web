@@ -22,10 +22,10 @@
         
         
         <div class="col-12 mt-4">
-            <re-captcha class="recaptcha" ></re-captcha>
+            <re-captcha @click="Submit" class="recaptcha" ></re-captcha>
         </div>
 
-
+        <not-available-toast @destroyToast="destroyToastFunction" v-if="VisibilityAvaibleToast"></not-available-toast>
 
 
 
@@ -40,11 +40,27 @@
     
     <script>
 import ReCaptcha from '../Elements/ReCaptcha.vue'
+import NotAvailableToast from '../Toats/NotAvailableToast.vue'
+
+
 
    
     export default {
-      components: {ReCaptcha },
-    
+      components: {ReCaptcha, NotAvailableToast, },
+        data(){
+            return{
+                VisibilityAvaibleToast: false
+            }
+        },
+        methods:{
+
+            Submit(){
+                this.VisibilityAvaibleToast = true
+            },
+            destroyToastFunction(){
+                this.VisibilityAvaibleToast = false
+            }
+        },
     }
     </script>
     

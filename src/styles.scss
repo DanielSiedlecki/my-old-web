@@ -1,6 +1,13 @@
 $primary-global-color: #327CE5;
 $secondary-global-color:#074CAB;
 
+
+// Toast Color 
+
+$error-toast-color: #F83E3E ;
+$warning-toast-color: #F8CF3E ;
+$success-toast-color: #3EF867 ;
+
 body {
     background-color: $primary-global-color
 }

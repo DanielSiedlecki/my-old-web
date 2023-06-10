@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <add-opinion-tab class="animation" ref="add_opinion_tab"  ></add-opinion-tab>
+    <add-opinion-tab class="animation" ref="add_opinion_tab" :length_list="length_list"  @refresh="() => {this.getData()}" ></add-opinion-tab>
   </template>
 
 
@@ -39,7 +39,8 @@
     data() {
       return {
         review_list: null,
-        OpinionVisibility:false
+        OpinionVisibility:false,
+        length_list: 0
       };
     },
     mounted() {
@@ -50,12 +51,16 @@
       const data = await fetchData();
       if (data) {
         this.review_list = data;
+        this.length_list = this.review_list.length
+        console.log(this.length_list)
+       
       }
     },
 
 
     emitModalOpen(){
       this.$refs.add_opinion_tab.openModal()
+      
     }
     },
   };

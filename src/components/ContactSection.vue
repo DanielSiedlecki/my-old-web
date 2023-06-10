@@ -14,8 +14,8 @@
 
 
     </div>
-
-
+    
+   
 </div>
 
 </div>
@@ -28,8 +28,9 @@ import ContactForm from './ContactSectionComponents/ContactForm.vue'
 import ContactInform from './ContactSectionComponents/ContactInform.vue'
 
 
+
 export default {
-  components: { ContactInform, ContactForm },
+  components: { ContactInform, ContactForm, },
   
 
 

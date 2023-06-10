@@ -33,36 +33,51 @@
     </div>
   </div>
 
-
+  <error-toast v-if="VisibilityErrorToast" @destroyToast="destroyToastFunction"></error-toast>
+  <success-toast v-if="VisibilitySuccessToast" @destroyToast="destroyToastFunction"> ,your opinion will be visible once it is approved by the administrator.</success-toast>
 
 
 </template>
 
 <script>
 
+
 import OpinionDataService from '../services/DataService.js'
+import ErrorToast from './Toats/ErrorToast.vue';
+import SuccessToast from './Toats/SuccessToast.vue';
 
 
 
 export default {
 
   components: {
+    ErrorToast,
+    SuccessToast
     
   },
+
+  props:{
+    length_list: {
+      type: Number
+    }
+  },
+
   data() {
     return {
       
       characterCount:0,
-      id: null,
       title_name: '',
       title_surname: '',
       descriptionModel:'',
       opinion: {
-        id: "20",
+        id: '',
         title: '',
         description: '',
         published: false
-      }
+      },
+      VisibilityErrorToast: false,
+      VisibilitySuccessToast: false,
+
     };
   },
 
@@ -81,14 +96,21 @@ export default {
 
       OpinionDataService.create(data)
         .then(response => {
-          this.opinion.id = response.opinion.id;
-          console.log(response.data);
+
+          console.log(response.data.id)
+          this.opinion.id = response.data.id;
+          this.closeModal()
+          this.VisibilitySuccessToast = true
+          this.$emit('refresh', true)
 
         })
         .catch(error => {
           console.log(error);
-          console.log(data)
+          this.closeModal()
+          this.VisibilityErrorToast = true
         });
+
+
     },
 
     openModal() {
@@ -104,6 +126,11 @@ export default {
       modal.classList.remove('show');
       modal.style.display = 'none';
       document.body.classList.remove('modal-open');
+    },
+    destroyToastFunction(){
+      this.VisibilityErrorToast = false
+      this.VisibilitySuccessToast = false
+
     }
   }
   }
@@ -153,4 +180,4 @@ button{
 
 
 </style>
-        DefaultButton
+       
