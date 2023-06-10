@@ -31,7 +31,7 @@ const routes = [
     path: '/Opinions',
     name: 'Opinions',
     component: OpinionsSection,
-    meta: { title: 'Opinions,,' }
+    meta: { title: 'Opinions' }
   },
 
   {
