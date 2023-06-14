@@ -4,7 +4,7 @@ import WorkAndEducationSection from './components/WorkAndEducationSection.vue'
 import { createRouter, createWebHistory } from 'vue-router';
 import OpinionsSection from './components/OpinionsSection.vue'
 import ContactSection from './components/ContactSection.vue'
-
+import PortfolioSection from './components/PortfolioSection.vue'
 
 
 const routes = [
@@ -12,7 +12,13 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta: { title: 'Strona główna' }
+    meta: { title: 'Home' }
+  },
+  {
+    path: '/Portfolio',
+    name: 'Portfolio',
+    component: PortfolioSection,
+    meta: { title: 'Portfolio' }
   },
   {
     path: '/Skills',

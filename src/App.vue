@@ -18,7 +18,7 @@
 <script>
 
 
-
+import { ScrollToTop } from './Scripts/ScrollToTop';
 import navbarComponents from './components/navbar-components.vue';
 import ArrowScroolUp from './components/Elements/ArrowScroolUp.vue';
 import FooterComponent from './components/FooterComponent.vue';
@@ -34,7 +34,10 @@ export default {
     FooterComponent, 
     
   },
+  created(){
+    ScrollToTop()
 
+  },
   
   
   

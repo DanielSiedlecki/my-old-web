@@ -3,7 +3,7 @@
 <hello-section v-if="VisibilityHelloSection" @buttonClick="handleButtonClick"  class="custom-container  d-flex align-items-center justify-content-center " @scrollToEducation="scrollToEducation"/>
 <div ref="portfolioSection">
 
-<porfolio-section v-if="VisiblityPortfolio"  class="custom-container position-relative" />
+<portfolio-section v-if="VisiblityPortfolio"  class="custom-container position-relative" />
 
 </div>
 
@@ -17,7 +17,7 @@
 <script>
 
 import HelloSection from './HelloSection.vue'
-import PorfolioSection from './PorfolioSection.vue';
+import PortfolioSection from './PortfolioSection.vue';
 
 
 
@@ -25,7 +25,7 @@ import PorfolioSection from './PorfolioSection.vue';
 export default {
   name: "HomePage",
   components: { HelloSection,
-                PorfolioSection,
+                PortfolioSection,
   },
   data(){
     return {

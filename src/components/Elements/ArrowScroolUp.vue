@@ -52,7 +52,7 @@ data(){ return {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 100;
+    z-index: 1000;
     opacity: 1;
 
     i { color: white;
