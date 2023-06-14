@@ -10,7 +10,7 @@
     
     <div class="row">
     <div class="col-md-4 col-sm-12  " v-for="card in Cards" :key="card">
-      <portoflio-card :src="card.src" :href="card.href">
+      <portoflio-card class="mb-5" :src="card.src" :href="card.href">
         <template #header> {{ card.header }} </template>
         <template #Backend> {{ card.backend }}</template>
         <template #Frontend> {{ card.frontend }}</template>
