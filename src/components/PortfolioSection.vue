@@ -17,7 +17,6 @@
         <template #Database> {{ card.database }}</template>
         <template #description> {{ card.description }}</template>
         <template #status> {{ card.status }}</template>
-
       </portoflio-card>
     </div>
   </div>
