@@ -42,7 +42,7 @@
 <script>
 
 
-import OpinionDataService from '../services/DataService.js'
+import {OpinionDataService} from '../services/DataService.js'
 import ErrorToast from './Toats/ErrorToast.vue';
 import SuccessToast from './Toats/SuccessToast.vue';
 import { Valid } from '@/Scripts/ValidScript';
@@ -120,8 +120,8 @@ export default {
         title: this.title_name + ' ' + this.title_surname,
         description: this.descriptionModel
       };
-
-      OpinionDataService.create(data)
+      const OpinionsDataService = new OpinionDataService()
+      OpinionsDataService.create(data)
         .then(response => {
 
           

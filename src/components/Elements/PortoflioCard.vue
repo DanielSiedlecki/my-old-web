@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p style="text-align: center;"><slot name="header"></slot></p>
+        <p style="text-align: center; width: 100%;"><slot name="header"></slot></p>
 
   <div class="row container">      
     <div class="col-12">

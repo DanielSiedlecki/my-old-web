@@ -20,6 +20,8 @@
             <skills-card class="col-4 mb-2 card-zoom-hover" :number="3" :icon="`my-icon-html`" :skill_name="`HTML`" :skill_level="`Regular`" />
             <skills-card class="col-4 mb-2 card-zoom-hover" :number="3" :icon="`my-icon-css`" :skill_name="`CSS`" :skill_level="`Regular`" />
             <skills-card class="col-4 mb-2 card-zoom-hover" :number="2" :icon="`my-icon-python`" :skill_name="`Python`" :skill_level="`Junior`" />
+            <skills-card class="col-4 mb-2 card-zoom-hover" :number="2" :icon="`my-icon-cSharp`" :skill_name="`C#`" :skill_level="`Junior`" />
+            <skills-card class="col-4 mb-2 card-zoom-hover" :number="2" :icon="`my-icon-sql`" :skill_name="`SQL`" :skill_level="`Junior`" />
             
         </div>
 
@@ -73,8 +75,8 @@ export default {
 
 img{
 
-    height: 40%;
-    width: 50%;
+    height: 20%;
+    width: 10vw;
    
 }
 </style>

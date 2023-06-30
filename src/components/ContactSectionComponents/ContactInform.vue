@@ -51,7 +51,7 @@ export default {
 
 p {
 
-  font-size: 28px
+  font-size: 2vw
   
 }
 

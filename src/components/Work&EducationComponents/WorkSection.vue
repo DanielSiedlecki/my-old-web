@@ -8,7 +8,7 @@
         <TimeLine>
           <template v-if="VisibilityDate" #data_start>02.2023</template>
           <template v-if="VisibilityDate" #data_divider>-</template>
-          <template v-if="VisibilityDate" #data_end>Ongoing</template>
+          <template v-if="VisibilityDate" #data_end>06.2023</template>
 
 
         </TimeLine>  

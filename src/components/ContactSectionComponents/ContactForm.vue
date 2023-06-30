@@ -9,24 +9,24 @@
 
     <div class="row ">
         <div class="col-12 mt-4">
-        <input v-model="fullname" :class="{'validation' : fullnameValid}" :placeholder="!fullnameValid ? 'Fullname' : 'Field cannot be empty'"/>   
+        <input v-model="email.fullname" :class="{'validation' : fullnameValid}" :placeholder="!fullnameValid ? 'Fullname' : 'Field cannot be empty'"/>   
         </div>
         
         <div class="col-12 mt-4">
-            <input v-model="email" :class="{'validation' : mailValid}" :placeholder="!mailValid ? 'Email' : 'Field cannot be empty'"/>
+            <input v-model="email.mail" :class="{'validation' : mailValid}" :placeholder="!mailValid ? 'Email' : 'Field cannot be empty'"/>
         </div>
         
         <div class="col-12 mt-4 " >
-            <textarea v-model="textarea" :class="{'validation' : textareaValid}" :placeholder="!textareaValid ? 'Text' : 'Field cannot be empty' " ></textarea> 
+            <textarea v-model="email.text" :class="{'validation' : textareaValid}" :placeholder="!textareaValid ? 'Text' : 'Field cannot be empty' " ></textarea> 
         </div>
         
         
-        <div class="col-12 mt-4">
+        <div class="col-12 d-flex justify-content-start">
             <re-captcha @click="Submit" class="recaptcha" ></re-captcha>
         </div>
 
         <not-available-toast @destroyToast="destroyToastFunction" v-if="VisibilityAvaibleToast"></not-available-toast>
-
+        
 
 
 
@@ -39,9 +39,11 @@
     </template>
     
     <script>
+
 import ReCaptcha from '../Elements/ReCaptcha.vue'
 import NotAvailableToast from '../Toats/NotAvailableToast.vue'
-import {Valid} from '../../Scripts/ValidScript.js'
+import { SendMailService } from '@/services/DataService'
+
 
 
    
@@ -49,9 +51,11 @@ import {Valid} from '../../Scripts/ValidScript.js'
       components: {ReCaptcha, NotAvailableToast, },
         data(){
             return{
+                email: {
                 fullname: '',
-                email: '',
-                textarea: '',
+                mail: '',
+                text: '',
+            },
 
                 VisibilityAvaibleToast: false,
 
@@ -65,25 +69,25 @@ import {Valid} from '../../Scripts/ValidScript.js'
         methods:{
 
             Submit(){
+               
+                var data = {
+                    fullname : this.email.fullname,
+                    mail: this.email.mail,
+                    text: this.email.text
+                }
+                const SendMailServices = new SendMailService()
 
-                
-                
+                SendMailServices.create(data)
+                .then(response => {
+                    console.log(response)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
 
-                if(Valid(this.fullname)){
-                    this.fullnameValid = true
-                    
-                }
-                if(Valid(this.email)){
-                    this.mailValid = true
-                }
-                if(Valid(this.textarea)){
-                    this.textareaValid = true
-                }
 
-                else{
-                    this.VisibilityAvaibleToast = true
-                    this.Send()
-                }
+
+                console.log(this.email)
 
 
                 
@@ -143,16 +147,7 @@ import {Valid} from '../../Scripts/ValidScript.js'
         outline: none;
         border: 1px solid $primary-global-color
     }
-    .recaptcha{
-        border-color: $primary-global-color;
-        background-color: $primary-global-color ;
-        width: 100%;
-        height: 6vh;
-        color: white;
-        font-size: 3vh;
-        border-radius: 10px;
-        border: 1px solid $primary-global-color
-    }
+    
     .validation {
         border: 1px solid red;
     }

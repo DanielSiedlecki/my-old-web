@@ -43,9 +43,10 @@ export default {
   data(){
     return {
       Cards: [
-            {id:1, header: 'daniel-siedlecki.pl', src: require('../assets/Portfolio/web1.png'), href:'https://daniel-siedlecki.pl/', backend: 'Node.js', frontend: 'Vue.js', database: 'MySql', description:'', status:'Visit'},
+            {id:1, header: 'daniel-siedlecki.pl', src: require('../assets/Portfolio/web1.png'), href:'https://daniel-siedlecki.pl/', description: "This is web app, representing my person and my skills, with the possibility of giving me your opinion and contacty form (SendGrid). It will appear soon tab with my blog." ,backend: 'Node.js', frontend: 'Vue.js', database: 'MySql', status:'Visit'},
             {id:2, header: 'adam-skakowski.pl', src: require('../assets/Portfolio/web2.png'), href: 'https://adam-skakowski.netlify.app/', frontend: 'Vue.js', description: '', status: 'Visit'},
             {id:3, header: 'Live Chat app', src: require('../assets/Portfolio/inBuilding.png'), frontend: 'Angular', Backend: 'Node.js', status: 'In soon'},
+            {id:4, header: 'Concierge system', src: require('../assets/Portfolio/web3.png'), href: 'https://adam-skakowski.netlify.app/', frontend: 'Vue.js', backend: 'Node.js', status: 'Check'},
                       ]
     }
   }

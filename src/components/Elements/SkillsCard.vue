@@ -140,5 +140,7 @@
     .my-icon-figma {background: url(../../assets/icons/Skills/icons8-figma-32.png) no-repeat;transform: scale(0.8);}
     .my-icon-adobe-photoshop {background: url(../../assets/icons/Skills/icons8-adobe-photoshop-32.png) no-repeat;transform: scale(0.8);}
     .my-icon-microsoft {background: url(../../assets/icons/Skills/icons8-microsoft-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-sql {background: url(../../assets/icons/Skills/icons8-sql-32.png) no-repeat;transform: scale(0.8);}
+    .my-icon-cSharp {background: url(../../assets/icons/Skills/icons8-c-sharp-logo-32.png) no-repeat;transform: scale(0.8);}
 
     </style>
