@@ -2,17 +2,17 @@
     <div>
         <p style="text-align: center; width: 100%;"><slot name="header"></slot></p>
 
-  <div class="row container">      
+  <div class="row container-fluid mx-auto">      
     <div class="col-12">
 
         
   <div class="card" style="min-width: 100%; z-index: 999;">
   
-  <div class="card-body">
+  <div class="card-body ">
     <p class="card-text">
         <img :src="src" style="width: 100%; height: 100%;">
     </p>
-    <a :href=href> <div class="status border ">
+    <a :href=href> <div class="status  ">
              
             <p ><slot name="status">In Progress</slot></p>
         
@@ -23,14 +23,14 @@
 
 
 </div>
-<div class="col-12 d-flex justify-content-end " >
+<div class="col-12 d-flex justify-content-end  ">
     <Button :class="{'d-none' : VisibilityMoreInfo}" @click="() => VisibilityMoreInfo = true">Show  More <i class="fas fa-angle-down"></i></Button>
 </div>
 </div>
 </div>
 
 
-<div v-show="VisibilityMoreInfo" style="min-width: 100%;" class=" row container animate__animated  animate__fadeInDown">
+<div v-show="VisibilityMoreInfo" style="min-width: 100%;" class=" ms-2 me-2 row container animate__animated  animate__fadeInDown">
     <div class="col-12">
 
         
@@ -106,14 +106,14 @@ export default {
 @import '../../styles.scss';
 .status {
     
-    width: 105%;
+    width: 110%;
     height: 30%;
     background-color: $primary-global-color;
     position: absolute;
     border-radius: 5px;
     left: 0;
     bottom: 0;
-    transform: translateX(-2.5%);
+    transform: translateX(-5%);
     
    
     

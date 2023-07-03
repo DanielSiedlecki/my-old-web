@@ -75,7 +75,7 @@ export default {
 
 img{
 
-    height: 20%;
+    height: 20vh;
     width: 10vw;
    
 }

@@ -22,10 +22,13 @@
         
         
         <div class="col-12 d-flex justify-content-start">
-            <re-captcha @click="Submit" class="recaptcha" ></re-captcha>
+            <re-captcha @CaptchaValid="CaptchaValidationStatus" class="recaptcha" ></re-captcha>
         </div>
 
-        <not-available-toast @destroyToast="destroyToastFunction" v-if="VisibilityAvaibleToast"></not-available-toast>
+        <div class="col-12 mb-4"><button @click="Validation">Send</button></div>
+
+        <error-toast v-if="VisibilityErrorToast" @destroyToast="destroyToastFunction">Recaptcha error.</error-toast>
+        <success-toast v-if="VisibilitySuccessToast" @destroyToast="destroyToastFunction">Your message was successfully sent. </success-toast>
         
 
 
@@ -41,14 +44,15 @@
     <script>
 
 import ReCaptcha from '../Elements/ReCaptcha.vue'
-import NotAvailableToast from '../Toats/NotAvailableToast.vue'
 import { SendMailService } from '@/services/DataService'
+import ErrorToast from '../Toats/ErrorToast.vue'
+import SuccessToast from '../Toats/SuccessToast.vue'
 
 
 
    
     export default {
-      components: {ReCaptcha, NotAvailableToast, },
+      components: {ReCaptcha, ErrorToast , SuccessToast},
         data(){
             return{
                 email: {
@@ -57,16 +61,46 @@ import { SendMailService } from '@/services/DataService'
                 text: '',
             },
 
-                VisibilityAvaibleToast: false,
+                VisibilityErrorToast: false,
+                VisibilitySuccessToast: false,
 
                 fullnameValid: false,
                 mailValid: false,
                 textareaValid: false,
-
+                CaptchaValid: false
 
             }
         },
         methods:{
+            Validation() {
+                console.log(this.CaptchaValid)
+                if(this.email.fullname.length <= 0){
+                    this.fullnameValid = !this.fullnameValid
+                }
+                else if(this.email.mail.length <= 0){
+                    this.mailValid = !this.mailValid
+                }
+                else if(this.email.text.length <= 0){
+                    this.textareaValid = !this.textareaValid
+                }
+                else if(this.CaptchaValid === false){
+                    this.VisibilityErrorToast = true
+                }
+
+                else{
+                    this.VisibilityErrorToast = false
+                    this.Submit()
+                }
+
+
+
+            },
+
+            CaptchaValidationStatus(captchaValid){
+
+                this.CaptchaValid = captchaValid;
+                console.log("Wartość captchaValid:", this.CaptchaValid);
+            },
 
             Submit(){
                
@@ -75,11 +109,15 @@ import { SendMailService } from '@/services/DataService'
                     mail: this.email.mail,
                     text: this.email.text
                 }
+
                 const SendMailServices = new SendMailService()
 
                 SendMailServices.create(data)
                 .then(response => {
                     console.log(response)
+                    this.VisibilitySuccessToast = true
+                    this.InputClear()
+
                 })
                 .catch(error => {
                     console.log(error)
@@ -92,13 +130,13 @@ import { SendMailService } from '@/services/DataService'
 
                 
             },
-            Send(){
+            InputClear(){
                 this.fullname = ''
                 this.email = ''
                 this.textarea = ''
-                this.fullnameValid = !this.fullnameValid
-                this.mailValid = !this.mailValid
-                this.textareaValid = !this.textareaValid
+                this.fullnameValid = false
+                this.mailValid = false
+                this.textareaValid = false
 
 
 
@@ -106,7 +144,8 @@ import { SendMailService } from '@/services/DataService'
             },
 
             destroyToastFunction(){
-                this.VisibilityAvaibleToast = false
+                this.VisibilityErrorToast = false
+                this.VisibilitySuccessToast = false
             }
         },
     }
@@ -152,4 +191,24 @@ import { SendMailService } from '@/services/DataService'
         border: 1px solid red;
     }
     
+    button {
+        width: 100%;
+        height: 6vh;
+        border: 3px solid $primary-global-color;
+        border-radius: 200px;
+        background-color: $primary-global-color;
+        color: white;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+    }
+
+    button:hover {
+        border-color: $secondary-global-color;
+        background-color: $secondary-global-color;
+        cursor: pointer;
+    }
     </style>

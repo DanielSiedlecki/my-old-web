@@ -14,7 +14,15 @@ import { RecaptchaValidService } from '@/services/DataService';
 
 
 export default {
+
+  data(){
+    return {
+      CaptchaValid: false
+    }
+  },
   methods: {
+
+
     submitForm() {
     },
     onRecaptchaVerify(response) {
@@ -28,12 +36,17 @@ export default {
 
 
         RecaptchaValidation.create(data)
-        .then( response => {
-          console.log(response)
+        .then( () => {
+          this.CaptchaValid = true
+  
+
+          this.$emit('CaptchaValid', this.CaptchaValid)
+          
 
         })
         .catch(error => {
           console.log(error)
+          this.$emit('CaptchaValid', this.CaptchaValid)
         })
     },
     loadRecaptchaScript() {

@@ -15,7 +15,7 @@
     </button>
   </div>
   <div class="toast-body">
-    Communication Error
+   <slot></slot>
   </div>
 </div>
 </div>

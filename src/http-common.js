@@ -3,7 +3,7 @@ import axios from 'axios';
 export async function fetchData(){
 
     try {
-        const response = await axios.get('http://localhost:8080/api/project/published');
+        const response = await axios.get('https://front-mycv.fly.dev/api/project/published');
         return response.data
     }catch (error){
         console.log(error);
@@ -15,7 +15,7 @@ export async function fetchData(){
 
 
 const http = axios.create({
-    baseURL: "http://localhost:8080/api/", 
+    baseURL: "https://front-mycv.fly.dev/api/", 
     headers: {
       "Content-type": "application/json"
     }
