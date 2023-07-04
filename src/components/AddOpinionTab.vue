@@ -24,6 +24,7 @@
 
            <p style="float:right"> {{ characterCount }} / 100</p>
           </div>
+
           <div class="modal-footer" style="border:none">
             <button type="button" class="btn btn-secondary " data-dismiss="modal" @click="closeModal">Close</button>
             <button type="button" class="btn btn-primary custom-color" @click="Submit()">Add Opinion</button>
@@ -48,11 +49,13 @@ import SuccessToast from './Toats/SuccessToast.vue';
 import { Valid } from '@/Scripts/ValidScript';
 
 
+
 export default {
 
   components: {
     ErrorToast,
-    SuccessToast
+    SuccessToast,
+    
     
   },
 

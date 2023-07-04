@@ -30,7 +30,7 @@ const routes = [
     path: '/Work&Education',
     name: 'Work&Education',
     component: WorkAndEducationSection,
-    meta: { title: 'Work&Education,' }
+    meta: { title: 'Work&Education' }
   },
   
   {
