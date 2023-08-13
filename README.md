@@ -1,24 +1,6 @@
-# mycv
+# My first web
 
-## Project setup
-```
-npm install
-```
+## Description
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This is my old website and my first major personal project, which was not well-refined, so I decided to abandon it.
+Im now building a new site. You can follow its progress using the following https://www.daniel-siedlecki.pl 
